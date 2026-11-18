@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"base_cards",
-    "path":"folders/Objects/base_cards.yy",
+    "path":"folders/Objects/cards/base_cards.yy",
   },
   "parentObjectId":null,
   "persistent":false,
