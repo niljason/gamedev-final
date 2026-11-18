@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_card",
-  "eventList":[],
+  "%Name":"base_card_attack",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_card",
+  "name":"base_card_attack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"base_cards",
+    "path":"folders/Objects/base_cards.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"base_card",
+    "path":"objects/base_card/base_card.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
