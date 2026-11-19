@@ -4,6 +4,8 @@ function enemy_death(idx){
 	update_enemy_pos()
 }
 
+// delete and recreate all enemy instances
+// probably better to lerp them to new position
 function update_enemy_pos() {
 	instance_destroy(enemy_base)
 	global.enemy_instances = []
@@ -15,5 +17,7 @@ function update_enemy_pos() {
 	for(var i = 0; i<array_length(global.enemy_types); i++) {
 		array_push(global.enemy_instances, instance_create_depth(_x + i * _offset, _y, 0, enemy_base))
 	}
+	
+	//
 }
 
