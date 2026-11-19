@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"attack_cards",
-    "path":"folders/Objects/attack_cards.yy",
+    "path":"folders/Objects/cards/attack_cards.yy",
   },
   "parentObjectId":{
     "name":"base_card_attack",
