@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_card_hb",
+    "path":"sprites/spr_card_hb/spr_card_hb.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

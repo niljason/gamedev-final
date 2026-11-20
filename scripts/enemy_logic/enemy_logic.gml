@@ -15,7 +15,7 @@ function update_enemy_pos() {
 	var _offset = 128
 	
 	for(var i = 0; i<array_length(global.enemy_types); i++) {
-		array_push(global.enemy_instances, instance_create_depth(_x + i * _offset, _y, 0, enemy_base))
+		array_push(global.enemy_instances, instance_create_layer(_x + i * _offset, _y, 0, enemy_base))
 	}
 	
 	//
