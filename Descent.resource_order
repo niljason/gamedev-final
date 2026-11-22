@@ -10,6 +10,7 @@
     {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
     {"name":"Sprites","order":4,"path":"folders/Sprites.yy",},
+    {"name":"cards","order":1,"path":"folders/Sprites/cards.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"base_card_attack","order":1,"path":"objects/base_card_attack/base_card_attack.yy",},
@@ -21,5 +22,6 @@
     {"name":"rm_map","order":1,"path":"rooms/rm_map/rm_map.yy",},
     {"name":"enemy_logic","order":1,"path":"scripts/enemy_logic/enemy_logic.yy",},
     {"name":"utility","order":2,"path":"scripts/utility/utility.yy",},
+    {"name":"spr_card_hb","order":1,"path":"sprites/spr_card_hb/spr_card_hb.yy",},
   ],
 }

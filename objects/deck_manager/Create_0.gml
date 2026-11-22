@@ -1,13 +1,17 @@
+// didnt make deck create instances, just stores card types in deck
 deck = [];
 for (var i = 0; i < 6; i++) {
-	var _card = instance_create_layer(0, 0, 0, a_strike);
-	array_push(deck, _card);
+	// var _card = instance_create_layer(0, 0, 0, a_strike);
+	array_push(deck, a_strike);
 }
 
+// hand stores card types in hand
 hand = []
-for (var i = 0; i < 6; i++) {
-	var _card = instance_create_layer(0, 0, 0, a_strike);
-	array_push(hand, a_strike);
+// hand instances stores instances created for display
+hand_instances = []
+// for now hand just draw 5 from deck and deletes them from deck from deck
+for (var i = 0; i < 5; i++) {
+	array_push(hand, array_pop(deck));
 }
 
 discard = []
