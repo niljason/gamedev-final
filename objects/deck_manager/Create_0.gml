@@ -20,7 +20,7 @@ for (var i = 0; i < 5; i++) {
 	array_push(hand, array_pop(deck));
 }
 
-global.discard = [];
+discard = [];
 exhaust = [];
 
 start_turn_energy = 3;
