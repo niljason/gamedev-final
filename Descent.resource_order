@@ -6,6 +6,7 @@
     {"name":"power_cards","order":3,"path":"folders/Objects/cards/power_cards.yy",},
     {"name":"skill_cards","order":2,"path":"folders/Objects/cards/skill_cards.yy",},
     {"name":"enemies","order":11,"path":"folders/Objects/enemies.yy",},
+    {"name":"player","order":13,"path":"folders/Objects/player.yy",},
     {"name":"managers","order":12,"path":"folders/Objects/managers.yy",},
     {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
@@ -23,5 +24,6 @@
     {"name":"enemy_logic","order":1,"path":"scripts/enemy_logic/enemy_logic.yy",},
     {"name":"utility","order":2,"path":"scripts/utility/utility.yy",},
     {"name":"spr_card_hb","order":1,"path":"sprites/spr_card_hb/spr_card_hb.yy",},
+    {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
   ],
 }
