@@ -1,17 +1,9 @@
 center_x = x + sprite_width / 2;
+energy_y = card_y + 8
 name_y = card_y + 48;
 text_y = card_y + 72;
 
-var _mouse_x_gui = device_mouse_x_to_gui(0);
-var _mouse_y_gui = device_mouse_y_to_gui(0);
-var _hovered = point_in_rectangle(
-	_mouse_x_gui,
-	_mouse_y_gui,
-	x,
-	y,
-	x + sprite_width,
-	y + sprite_height
-);
+var _hovered = hover()
 
 if (_hovered) {
 	if(mouse_check_button_pressed(mb_left)) {
