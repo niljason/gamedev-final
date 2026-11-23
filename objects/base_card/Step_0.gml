@@ -27,6 +27,8 @@ if (_hovered) {
 				array_push(_deck_manager.discard, _deck_manager.hand[_hand_index]);
 				array_delete(_deck_manager.hand, _hand_index, 1);
 				array_delete(_deck_manager.hand_instances, _hand_index, 1);
+				// PLAY CARD EFFECTS HERE
+				play_card(card_effects)
 				instance_destroy();
 			}
 		}

@@ -4,4 +4,4 @@ energy = 1;
 atk_val = 6;
 name = "Strike";
 
-card_affects = {attack: attack_damage}
+card_effects = {attack: atk_val}
