@@ -1,10 +1,8 @@
 if (global.game_state == GAME_STATE.START_BATTLE) {
 	global.game_state = GAME_STATE.START_TURN;
-}
-else if (global.game_state == GAME_STATE.PLAY_CARD) {
+} else if (global.game_state == GAME_STATE.PLAY_CARD) {
 	global.game_state = GAME_STATE.START_TURN;
-}
-else if (global.game_state == GAME_STATE.END_TURN) {
+} else if (global.game_state == GAME_STATE.END_TURN) {
 	while (array_length(hand) > 0) {
 		array_push(discard, array_pop(hand));
 	}
@@ -13,9 +11,8 @@ else if (global.game_state == GAME_STATE.END_TURN) {
 	for (var i = 0; i < 5; i++) {
 		if (array_length(deck) <= 0 && array_length(discard) > 0) {
 			// Move all discarded cards into the empty draw pile, then shuffle it.
-			while (array_length(discard) > 0) {
-				array_push(deck, array_pop(discard));
-			}
+			deck = discard
+			discard = []
 			array_shuffle_ext(deck);
 		}
 

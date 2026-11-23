@@ -19,7 +19,7 @@ hand = [];
 // hand instances stores instances created for display
 hand_instances = [];
 hand_needs_rebuild = false;
-// for now hand just draw 5 from deck and deletes them from deck from deck
+// for now hand just draw 5 from deck and removes those from the deck
 for (var i = 0; i < 5; i++) {
 	array_push(hand, array_pop(deck));
 }
