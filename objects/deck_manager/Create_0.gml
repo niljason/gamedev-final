@@ -1,27 +1,34 @@
-// didnt make deck create instances, just stores card types in deck
-deck = [];
-for (var i = 0; i < 6; i++) {
-	// var _card = instance_create_layer(0, 0, 0, a_strike);
-	array_push(deck, a_strike);
+// base deck --> every card in the deck
+// change to cur deck instead for battles
+global.base_deck = []
+for (var i = 0; i < 3; i++) {
+	array_push(global.base_deck, a_strike);
+	array_push(global.base_deck, a_block);
 }
 
+// Copy the permanent deck into this battle's draw pile, then shuffle it.
+// Keeping a separate array prevents drawing cards from changing global.base_deck.
+deck = [];
+for (var i = 0; i < array_length(global.base_deck); i++) {
+	array_push(deck, global.base_deck[i]);
+}
+array_shuffle_ext(deck);
+
 // hand stores card types in hand
-hand = []
+hand = [];
 // hand instances stores instances created for display
-hand_instances = []
-// for now hand just draw 5 from deck and deletes them from deck from deck
+hand_instances = [];
+hand_needs_rebuild = false;
+// for now hand just draw 5 from deck and removes those from the deck
 for (var i = 0; i < 5; i++) {
 	array_push(hand, array_pop(deck));
 }
 
-discard = []
-
-exhaust = []
+discard = [];
+exhaust = [];
 
 start_turn_energy = 3;
 energy_count = start_turn_energy;
-
-
 enum GAME_STATE {
 	START_BATTLE,
 	START_TURN,
@@ -31,6 +38,8 @@ enum GAME_STATE {
 	END_BATTLE,
 	NOTHING,
 }
+
+global.game_state = GAME_STATE.START_BATTLE;
 
 card_width = 128;
 card_offset = card_width / 8;
