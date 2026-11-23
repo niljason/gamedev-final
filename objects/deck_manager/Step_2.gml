@@ -35,8 +35,8 @@ else if (global.game_state == GAME_STATE.END_TURN) {
 // check if the card instances need to be recreated or repositioned
 var _hand_size = array_length(hand);
 var _needs_rebuild = hand_needs_rebuild || _hand_size != array_length(hand_instances);
-var _hand_start_x = display_get_gui_width() / 2 - (_hand_size - 1) * (card_width + card_offset) / 2;
-var _hand_y = display_get_gui_height() - 168;
+var _hand_start_x = room_width / 2 - (_hand_size - 1) * (card_width + card_offset) / 2;
+var _hand_y = room_height - 168;
 
 if (!_needs_rebuild) {
 	for (var i = 0; i < _hand_size; i++) {
