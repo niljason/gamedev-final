@@ -26,6 +26,7 @@
     {"name":"spr_card_hb","order":1,"path":"sprites/spr_card_hb/spr_card_hb.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"target_hud","order":1,"path":"objects/target_hud/target_hud.yy",},
+    {"name":"card_logic","order":1,"path":"scripts/card_logic/card_logic.yy",},
     {"name":"spr_hud_target","order":1,"path":"sprites/spr_hud_target/spr_hud_target.yy",},
   ],
 }
