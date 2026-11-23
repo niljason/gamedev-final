@@ -8,3 +8,16 @@ function reset() {
 	}
 	room_goto(rm_main)
 }
+
+function hover() {
+	var _mouse_x_gui = device_mouse_x_to_gui(0);
+	var _mouse_y_gui = device_mouse_y_to_gui(0);
+	return point_in_rectangle(
+	_mouse_x_gui,
+	_mouse_y_gui,
+	x,
+	y,
+	x + sprite_width,
+	y + sprite_height
+	);
+}

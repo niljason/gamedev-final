@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"target_hud","order":1,"path":"objects/target_hud/target_hud.yy",},
+    {"name":"spr_hud_target","order":1,"path":"sprites/spr_hud_target/spr_hud_target.yy",},
+  ],
 }

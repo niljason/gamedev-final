@@ -1,12 +1,17 @@
-// didnt make deck create instances, just stores card types in deck
-deck = [];
-for (var i = 0; i < 6; i++) {
-	// var _card = instance_create_layer(0, 0, 0, a_strike);
-	array_push(deck, a_strike);
-	array_push(deck, a_block);
+// base deck --> every card in the deck
+// change to cur deck instead for battles
+global.base_deck = []
+for (var i = 0; i < 3; i++) {
+	array_push(global.base_deck, a_strike);
+	array_push(global.base_deck, a_block);
 }
 
-// shuffle deck
+// Copy the permanent deck into this battle's draw pile, then shuffle it.
+// Keeping a separate array prevents drawing cards from changing global.base_deck.
+deck = [];
+for (var i = 0; i < array_length(global.base_deck); i++) {
+	array_push(deck, global.base_deck[i]);
+}
 array_shuffle_ext(deck);
 
 // hand stores card types in hand
