@@ -25,9 +25,10 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 	}
 
 	energy_count = start_turn_energy;
-	global.plyr_armor = 0;
 	hand_needs_rebuild = true;
-	global.game_state = GAME_STATE.START_TURN;
+	global.enemy_turn += 1;
+	global.enemy_actions_remaining = instance_number(enemy_base);
+	global.game_state = GAME_STATE.ENEMY_TURN;
 }
 
 // check if the card instances need to be recreated or repositioned

@@ -35,11 +35,14 @@ enum GAME_STATE {
 	PLAY_CARD,
 	CARD_STUFF,
 	END_TURN,
+	ENEMY_TURN,
 	END_BATTLE,
 	NOTHING,
 }
 
 global.game_state = GAME_STATE.START_BATTLE;
+global.enemy_turn = 0;
+global.enemy_actions_remaining = 0;
 
 card_width = 128;
 card_offset = card_width / 8;
