@@ -1,3 +1,3 @@
 // Inherit the parent event
 event_inherited();
-attack_damage = 0;
+atk_val = 0;

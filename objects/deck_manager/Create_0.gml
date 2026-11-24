@@ -4,6 +4,8 @@ global.base_deck = []
 for (var i = 0; i < 3; i++) {
 	array_push(global.base_deck, a_strike);
 	array_push(global.base_deck, a_block);
+	// testing
+	array_push(global.base_deck, a_draw_test);
 }
 
 // Copy the permanent deck into this battle's draw pile, then shuffle it.
@@ -14,9 +16,7 @@ for (var i = 0; i < array_length(global.base_deck); i++) {
 }
 array_shuffle_ext(deck);
 
-// hand stores card types in hand
 hand = [];
-// hand instances stores instances created for display
 hand_instances = [];
 hand_needs_rebuild = false;
 // for now hand just draw 5 from deck and removes those from the deck
@@ -35,11 +35,14 @@ enum GAME_STATE {
 	PLAY_CARD,
 	CARD_STUFF,
 	END_TURN,
+	ENEMY_TURN,
 	END_BATTLE,
 	NOTHING,
 }
 
 global.game_state = GAME_STATE.START_BATTLE;
+global.enemy_turn = 0;
+global.enemy_actions_remaining = 0;
 
 card_width = 128;
 card_offset = card_width / 8;
