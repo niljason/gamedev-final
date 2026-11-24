@@ -68,5 +68,7 @@ function gain_armor(_val) {
 function draw_from_deck(_val) {
 	var _deck = deck_manager.deck
 	var _hand = deck_manager.hand
-	array_push(_hand, array_pop(_deck))
+	var drawn_card = array_pop(_deck)
+	drawn_card.in_hand = true
+	array_push(_hand, drawn_card)
 }

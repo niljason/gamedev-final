@@ -15,6 +15,9 @@ target_y = card_y - 64;
 
 in_hand = false
 
+// makes the draw frame happen 1 frame later in theory which reduces jank
+in_position = false
+
 // card_affects will be object with key from CARD_EFFECTS:Int
 // affects with no need for number will just be 0
 /*
