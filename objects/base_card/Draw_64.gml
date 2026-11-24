@@ -1,3 +1,7 @@
+if (!in_hand) {
+	return
+}
+
 // draw card sprite
 // can now lerp it
 draw_sprite(card_sprite, image_index, x, card_y);

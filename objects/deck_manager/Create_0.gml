@@ -2,26 +2,27 @@
 // change to cur deck instead for battles
 global.base_deck = []
 for (var i = 0; i < 3; i++) {
-	array_push(global.base_deck, a_strike);
-	array_push(global.base_deck, a_block);
+	var strike = instance_create_depth(0, 0, 0, a_strike)
+	var block = instance_create_depth(0, 0, 0, a_block)
+	var draw = instance_create_depth(0, 0, 0, a_draw_test)
+	array_push(global.base_deck, strike);
+	array_push(global.base_deck, block);
 	// testing
-	array_push(global.base_deck, a_draw_test);
+	array_push(global.base_deck, draw);
 }
 
-// Copy the permanent deck into this battle's draw pile, then shuffle it.
-// Keeping a separate array prevents drawing cards from changing global.base_deck.
-deck = [];
-for (var i = 0; i < array_length(global.base_deck); i++) {
-	array_push(deck, global.base_deck[i]);
-}
+// just copy the base deck to the in combat deck, and then shuffle it
+deck = array_create(array_length(global.base_deck));
+array_copy(deck, 0, global.base_deck, 0, array_length(global.base_deck));
 array_shuffle_ext(deck);
 
 hand = [];
-hand_instances = [];
 hand_needs_rebuild = false;
 // for now hand just draw 5 from deck and removes those from the deck
 for (var i = 0; i < 5; i++) {
-	array_push(hand, array_pop(deck));
+	var next_card = array_pop(deck)
+	next_card.in_hand = true
+	array_push(hand, next_card);
 }
 
 discard = [];

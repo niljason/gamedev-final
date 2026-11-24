@@ -12,6 +12,8 @@ text_y = y + 72;
 card_y = y;
 target_y = y - 64;
 
+in_hand = false
+
 // card_affects will be object with key from CARD_EFFECTS:Int
 // affects with no need for number will just be 0
 /*
