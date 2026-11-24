@@ -1,3 +1,7 @@
+if (!in_hand) {
+	return
+}
+
 draw_sprite(card_sprite, image_index, x, card_y);
 
 draw_set_halign(fa_center);
