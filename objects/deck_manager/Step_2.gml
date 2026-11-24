@@ -3,6 +3,9 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 } else if (global.game_state == GAME_STATE.PLAY_CARD) {
 	global.game_state = GAME_STATE.START_TURN;
 } else if (global.game_state == GAME_STATE.END_TURN) {
+	// move all cards to the deck so it looks like drawing
+	base_card.x = deck_pile_hud.x
+	
 	// discard hand (might need more code for retain cards)
 	while (array_length(hand) > 0) {
 		var discarded_card = array_pop(hand)
@@ -25,7 +28,9 @@ if (hand_needs_reposition) {
 	hand_start_x = room_width / 2 + (hand_size - 1) * (card_width + card_offset) / 2;
 	for (var i = 0; i < hand_size; i++) {
 		var _card_x = hand_start_x - (card_width + card_offset) * i;
-		hand[i].x = _card_x
+		hand[i].state_moving = true
+		hand[i].endx = _card_x
+		
 	}
 	hand_needs_reposition = false
 }

@@ -40,3 +40,6 @@ if (_hovered) {
 	card_y = lerp(card_y, y, 0.2);
 }
 
+if(state_moving) {
+	move_card(endx)
+}
