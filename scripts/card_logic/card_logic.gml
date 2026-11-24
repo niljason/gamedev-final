@@ -59,8 +59,6 @@ function attack(damage) {
 	if(_target != undefined) {
 		_target.cur_hp -= damage
 		if (_target.cur_hp <= 0) {
-			// temporary delete (this might actually be fine)
-			instance_destroy(_target)
 			enemy_death(_target)
 		}
 	}	
