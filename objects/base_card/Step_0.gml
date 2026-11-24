@@ -1,7 +1,7 @@
-center_x = x + sprite_width / 2;
-energy_y = card_y + 8
-name_y = card_y + 48;
-text_y = card_y + 72;
+center_x = x;
+energy_y = card_y - sprite_width / 2
+name_y = card_y + 48 - sprite_width / 2;
+text_y = card_y + 72 - sprite_width / 2;
 
 var _hovered = hover()
 

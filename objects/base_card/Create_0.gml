@@ -4,7 +4,7 @@ energy = 0;
 art_sprite = noone;
 card_sprite = spr_base_card;
 
-center_x = x + sprite_width / 2;
+center_x = x;
 energy_y = y + 8
 name_y = y + 48;
 text_y = y + 72;
