@@ -54,6 +54,10 @@ function attack(_val) {
 	
 	if(_target != undefined) {
 		_target.cur_hp -= _val
+		if (_target.cur_hp <= 0) {
+			// temporary delete
+			instance_destroy(_target)
+		}
 	}	
 }
 

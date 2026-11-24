@@ -25,6 +25,7 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 	}
 
 	energy_count = start_turn_energy;
+	global.plyr_armor = 0;
 	hand_needs_rebuild = true;
 	global.game_state = GAME_STATE.START_TURN;
 }
