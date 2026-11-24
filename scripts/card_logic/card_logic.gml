@@ -49,26 +49,22 @@ function play_card(_effects) {
 	}	
 }
 
-function attack(_val) {
+function attack(damage) {
 	var _target = global.target_enemy
 	
 	if(_target != undefined) {
-		_target.cur_hp -= _val
+		_target.cur_hp -= damage
 		if (_target.cur_hp <= 0) {
-			// temporary delete
+			// temporary delete (this might actually be fine)
 			instance_destroy(_target)
 		}
 	}	
 }
 
-function gain_armor(_val) {
-	global.plyr_armor += _val
+function gain_armor(armor) {
+	global.plyr_armor += armor
 }
 
-function draw_from_deck(_val) {
-	var _deck = deck_manager.deck
-	var _hand = deck_manager.hand
-	var drawn_card = array_pop(_deck)
-	drawn_card.in_hand = true
-	array_push(_hand, drawn_card)
+function draw_from_deck(num_cards) {
+	deck_manager.draw_cards(num_cards)
 }

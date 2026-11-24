@@ -3,6 +3,7 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 } else if (global.game_state == GAME_STATE.PLAY_CARD) {
 	global.game_state = GAME_STATE.START_TURN;
 } else if (global.game_state == GAME_STATE.END_TURN) {
+	// discard hand (might need more code for retain cards)
 	while (array_length(hand) > 0) {
 		var discarded_card = array_pop(hand)
 		discarded_card.in_hand = false
@@ -10,23 +11,7 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 	}
 
 	// draw a new hand
-	for (var i = 0; i < 5; i++) {
-		if (array_length(deck) <= 0 && array_length(discard) > 0) {
-			// Move all discarded cards into the empty draw pile, then shuffle it.
-			deck = discard
-			discard = []
-			array_shuffle_ext(deck);
-		}
-
-		if (array_length(deck) <= 0) {
-			// no cards remain in either pile
-			break;
-		}
-		
-		var next_card = array_pop(deck)
-		next_card.in_hand = true
-		array_push(hand, next_card);
-	}
+    draw_cards(turn_start_draw);
 
 	energy_count = start_turn_energy;
 	global.enemy_turn += 1;
@@ -34,48 +19,13 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 	global.game_state = GAME_STATE.ENEMY_TURN;
 }
 
-// check if the card instances need to be recreated or repositioned
-var _hand_size = array_length(hand);
-var _needs_rebuild = hand_needs_rebuild // || _hand_size != array_length(hand_instances);
-var _hand_start_x = room_width / 2 + (_hand_size - 1) * (card_width + card_offset) / 2;
-var _hand_y = room_height - 168;
-
-for (var i = 0; i < _hand_size; i++) {
-		var _card_x = _hand_start_x - (card_width + card_offset) * i;
+// check if the card instances need to be repositioned, which just means a card has been played/drawn
+if (hand_needs_reposition) {
+	var hand_size = array_length(hand)
+	hand_start_x = room_width / 2 + (hand_size - 1) * (card_width + card_offset) / 2;
+	for (var i = 0; i < hand_size; i++) {
+		var _card_x = hand_start_x - (card_width + card_offset) * i;
 		hand[i].x = _card_x
-		hand[i].y = _hand_y;
-		hand[i].target_y = _hand_y - 64
+	}
+	hand_needs_reposition = false
 }
-	
-
-//if (!_needs_rebuild) {
-//	for (var i = 0; i < _hand_size; i++) {
-//		if (!instance_exists(hand_instances[i])) {
-//			_needs_rebuild = true;
-//			break;
-//		}
-//	}
-//}
-
-//// rebuild the hand when its data and instance list no longer match
-//if (_needs_rebuild) {
-//	for (var i = 0; i < array_length(hand_instances); i++) {
-//		if (instance_exists(hand_instances[i])) {
-//			instance_destroy(hand_instances[i]);
-//		}
-//	}
-
-//	hand_instances = [];
-//	for (var i = 0; i < _hand_size; i++) {
-//		var _card_x = _hand_start_x - (card_width + card_offset) * i;
-//		draw_card(id, _card_x, _hand_y, hand[i]);
-//	}
-//	hand_needs_rebuild = false;
-//}
-//else {
-//for (var i = 0; i < _hand_size; i++) {
-//		var _card_x = _hand_start_x - (card_width + card_offset) * i;
-//		hand[i].x = lerp(hand[i].x, _card_x, 0.15);
-//		hand[i].y = _hand_y;
-//}
-//}

@@ -18,13 +18,36 @@ array_copy(deck, 0, global.base_deck, 0, array_length(global.base_deck));
 array_shuffle_ext(deck);
 
 hand = [];
-hand_needs_rebuild = false;
+hand_needs_reposition = false
+hand_y = room_height - 168;
+turn_start_draw = 5;
 // for now hand just draw 5 from deck and removes those from the deck
-for (var i = 0; i < 5; i++) {
-	var next_card = array_pop(deck)
-	next_card.in_hand = true
-	array_push(hand, next_card);
+
+function draw_cards(num_cards) {
+	for (var i = 0; i < num_cards; i++) {
+		if (array_length(deck) <= 0 && array_length(discard) > 0) {
+			// Move all discarded cards into the empty draw pile, then shuffle it.
+			deck = discard
+			discard = []
+			array_shuffle_ext(deck);
+		}
+
+		if (array_length(deck) <= 0) {
+			// no cards remain in either pile
+			return
+		}
+		
+		// we can always determine where the y of the card is supposed to be
+		var next_card = array_pop(deck)
+		next_card.y = hand_y
+		next_card.card_y = hand_y
+		next_card.target_y = hand_y - 64
+		next_card.in_hand = true
+		array_push(hand, next_card);
+		hand_needs_reposition = true
+	}
 }
+draw_cards(turn_start_draw);
 
 discard = [];
 exhaust = [];

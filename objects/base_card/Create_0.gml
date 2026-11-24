@@ -4,7 +4,6 @@ energy = 0;
 art_sprite = noone;
 card_sprite = spr_base_card;
 
-
 center_x = x;
 energy_y = y + 8
 name_y = y + 48;
@@ -14,9 +13,6 @@ card_y = room_height - 168;
 target_y = card_y - 64;
 
 in_hand = false
-
-// makes the draw frame happen 1 frame later in theory which reduces jank
-in_position = false
 
 // card_affects will be object with key from CARD_EFFECTS:Int
 // affects with no need for number will just be 0

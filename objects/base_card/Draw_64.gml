@@ -1,4 +1,4 @@
-if (!in_hand or !in_position) {
+if (!in_hand) {
 	return
 }
 
