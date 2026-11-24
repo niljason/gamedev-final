@@ -34,6 +34,7 @@ if (_hovered) {
 				array_delete(_deck_manager.hand, _hand_index, 1);
 				// PLAY CARD EFFECTS HERE
 				play_card(card_effects)
+				card_y = y
 				in_hand = false
 			}
 		}
