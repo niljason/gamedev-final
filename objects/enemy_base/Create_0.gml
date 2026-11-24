@@ -13,7 +13,8 @@ state = ENEMY_STATE.IDLE
 enum ENEMY_STATE {
 	IDLE,
 	PULLED,
-	PUSHED
+	PUSHED,
+	DEAD
 }
 
 pulled_x = x - 128

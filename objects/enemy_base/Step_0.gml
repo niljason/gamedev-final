@@ -1,5 +1,18 @@
 // end player turn
 // commit actions
+if (cur_hp <= 0) {
+	state = ENEMY_STATE.DEAD;
+}
+
+if (state == ENEMY_STATE.DEAD) {
+	if (global.game_state == GAME_STATE.ENEMY_TURN && last_action_turn != global.enemy_turn) {
+		global.enemy_actions_remaining -= 1;
+	}
+
+	enemy_death(id);
+	exit;
+}
+
 var _hover = hover()
 
 if(_hover) {

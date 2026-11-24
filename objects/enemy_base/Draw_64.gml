@@ -1,9 +1,13 @@
-if(state = ENEMY_STATE.IDLE) {
+if (state == ENEMY_STATE.DEAD) {
+	exit;
+}
+
+if(state == ENEMY_STATE.IDLE) {
 	// idle animation
 	draw_self()
 	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
 }
-else if(state = ENEMY_STATE.PULLED) {
+else if(state == ENEMY_STATE.PULLED) {
 	draw_self()
 	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
 	pull_forward(pulled_x)
