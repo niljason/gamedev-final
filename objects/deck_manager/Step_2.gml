@@ -34,7 +34,7 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 // check if the card instances need to be recreated or repositioned
 var _hand_size = array_length(hand);
 var _needs_rebuild = hand_needs_rebuild || _hand_size != array_length(hand_instances);
-var _hand_start_x = room_width / 2 - (_hand_size - 1) * (card_width + card_offset) / 2;
+var _hand_start_x = room_width / 2 + (_hand_size - 1) * (card_width + card_offset) / 2;
 var _hand_y = room_height - 168;
 
 if (!_needs_rebuild) {
@@ -56,14 +56,14 @@ if (_needs_rebuild) {
 
 	hand_instances = [];
 	for (var i = 0; i < _hand_size; i++) {
-		var _card_x = _hand_start_x + (card_width + card_offset) * i;
+		var _card_x = _hand_start_x - (card_width + card_offset) * i;
 		draw_card(id, _card_x, _hand_y, hand[i]);
 	}
 	hand_needs_rebuild = false;
 }
 else {
 	for (var i = 0; i < _hand_size; i++) {
-		var _card_x = _hand_start_x + (card_width + card_offset) * i;
+		var _card_x = _hand_start_x - (card_width + card_offset) * i;
 		hand_instances[i].x = lerp(hand_instances[i].x, _card_x, 0.15);
 		hand_instances[i].y = _hand_y;
 	}
