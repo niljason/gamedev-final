@@ -37,7 +37,7 @@ function play_card(_effects) {
 			
 				break
 			case "ritual":
-				gain_strength(ritual_val)
+				gain_ritual(ritual_val)
 				break
 			case "retain":
 			
