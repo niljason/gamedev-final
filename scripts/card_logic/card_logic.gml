@@ -50,13 +50,18 @@ function play_card(_effects) {
 }
 
 function attack(damage) {
+	var dmg_falloff = 0.1
 	var _target = global.target_enemy
+	var _idx = array_get_index(global.enemy_instances, _target)
+	
+	damage = floor(damage * (1 - dmg_falloff * _idx))
 	
 	if(_target != undefined) {
 		_target.cur_hp -= damage
 		if (_target.cur_hp <= 0) {
 			// temporary delete (this might actually be fine)
 			instance_destroy(_target)
+			enemy_death(_target)
 		}
 	}	
 }
