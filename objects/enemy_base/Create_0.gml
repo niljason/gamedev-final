@@ -7,3 +7,9 @@ moveset = [
 move_index = 0
 strength = 0
 last_action_turn = -1
+
+status_effects = [
+	{strength: 0},
+	{siphon: 0},
+	{weak: 0}
+]

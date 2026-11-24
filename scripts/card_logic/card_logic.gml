@@ -13,7 +13,7 @@ function play_card(_effects) {
 				draw_from_deck(draw_val)
 				break
 			case "strength":
-			
+				gain_strength(strength_val)
 				break
 			case "siphon":
 			
@@ -37,7 +37,7 @@ function play_card(_effects) {
 			
 				break
 			case "ritual":
-			
+				gain_strength(ritual_val)
 				break
 			case "retain":
 			
@@ -70,3 +70,12 @@ function draw_from_deck(_val) {
 	var _hand = deck_manager.hand
 	array_push(_hand, array_pop(_deck))
 }
+
+function gain_strength(_val) {
+	obj_player.status_effects.strength += _val
+}
+
+function gain_ritual(_val) {
+	obj_player.status_effects.ritual += _val
+}
+
