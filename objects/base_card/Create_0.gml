@@ -16,7 +16,7 @@ in_hand = false
 state_moving = false
 endx = x
 
-// card_affects will be object with key from CARD_EFFECTS:Int
+// card_effects will be object with key from CARD_EFFECTS:Int
 // affects with no need for number will just be 0
 /*
 attack
@@ -33,4 +33,4 @@ fatal
 ritual
 retain
 */
-card_affects = {}
+card_effects = {}
