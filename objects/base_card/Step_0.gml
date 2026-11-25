@@ -34,7 +34,7 @@ if (_hovered) {
 			in_hand = false
 		}
 	}
-	card_y = lerp(card_y, target_y, 0.1);
+	card_y = lerp(card_y, target_y, 0.9);
 } else {
 	card_y = lerp(card_y, y, 0.2);
 }

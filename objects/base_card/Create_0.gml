@@ -2,10 +2,10 @@ name = "DefaultN";
 text = "DefaultT";
 energy = 0;
 art_sprite = noone;
-card_sprite = spr_base_card;
+card_sprite = spr_card;
 
 center_x = x;
-energy_y = y + 8
+energy_y = y
 name_y = y + 48;
 text_y = y + 72;
 

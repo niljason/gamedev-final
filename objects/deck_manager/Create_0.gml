@@ -29,7 +29,7 @@ discard = [];
 exhaust = [];
 
 hand_needs_reposition = false
-hand_y = room_height - 168;
+hand_y = room_height;
 turn_start_draw = 5;
 // for now hand just draw 5 from deck and removes those from the deck
 
@@ -52,9 +52,9 @@ global.game_state = GAME_STATE.START_BATTLE;
 global.enemy_turn = 0;
 global.enemy_actions_remaining = 0;
 
-card_width = 128;
-card_offset = card_width / 8;
-card_height = 200;
+card_width = 256;
+card_offset = -32;
+card_height = 256;
 
 function draw_cards(num_cards) {
 	for (var i = 0; i < num_cards; i++) {
@@ -74,7 +74,7 @@ function draw_cards(num_cards) {
 		var next_card = array_pop(deck)
 		next_card.y = hand_y
 		next_card.card_y = hand_y
-		next_card.target_y = hand_y - 64
+		next_card.target_y = hand_y - card_height / 2
 		next_card.in_hand = true
 		array_push(hand, next_card);
 		hand_needs_reposition = true
