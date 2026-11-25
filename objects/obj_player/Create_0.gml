@@ -1,4 +1,4 @@
-max_hp = 100
+max_hp = 30
 hp = max_hp
 armor = 0
 
