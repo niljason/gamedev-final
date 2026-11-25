@@ -73,7 +73,7 @@ function draw_cards(num_cards) {
 		// we can always determine where the y of the card is supposed to be
 		var next_card = array_pop(deck)
 		next_card.y = hand_y
-		next_card.card_y = hand_y
+		next_card.card_original_y = hand_y
 		next_card.target_y = hand_y - card_height / 2
 		next_card.in_hand = true
 		array_push(hand, next_card);

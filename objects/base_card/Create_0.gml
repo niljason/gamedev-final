@@ -9,8 +9,8 @@ energy_y = y
 name_y = y + 48;
 text_y = y + 72;
 
-card_y = room_height - 168;
-target_y = card_y - 64;
+card_original_y = y
+target_y = y - 64;
 
 in_hand = false
 state_moving = false

@@ -3,9 +3,9 @@ if (!in_hand) {
 }
 
 center_x = x;
-energy_y = card_y - sprite_width / 2
-name_y = card_y + 48 - sprite_width / 2;
-text_y = card_y + 72 - sprite_width / 2;
+energy_y = y - sprite_width / 2
+name_y = y + 48 - sprite_width / 2;
+text_y = y + 72 - sprite_width / 2;
 
 var _hovered = hover()
 
@@ -34,9 +34,9 @@ if (_hovered) {
 			in_hand = false
 		}
 	}
-	card_y = lerp(card_y, target_y, 0.9);
+	y = lerp(y, target_y, 0.9);
 } else {
-	card_y = lerp(card_y, y, 0.2);
+	y = lerp(y, card_original_y, 0.2);
 }
 
 if(state_moving) {
