@@ -5,11 +5,11 @@ if (state == ENEMY_STATE.DEAD) {
 if(state == ENEMY_STATE.IDLE) {
 	// idle animation
 	draw_self()
-	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
+	draw_text(x, y-24, string(hp) + "/" + string(max_hp))
 }
 else if(state == ENEMY_STATE.PULLED) {
 	draw_self()
-	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
+	draw_text(x, y-24, string(hp) + "/" + string(max_hp))
 	pull_forward(pulled_x)
 }
 

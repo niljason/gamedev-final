@@ -1,6 +1,6 @@
 // end player turn
 // commit actions
-if (cur_hp <= 0) {
+if (hp <= 0) {
 	state = ENEMY_STATE.DEAD;
 }
 

@@ -1,5 +1,5 @@
 max_hp = 20
-cur_hp = max_hp
+hp = max_hp
 
 moveset = [
 	{attack: 1},

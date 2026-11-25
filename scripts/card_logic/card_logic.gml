@@ -76,8 +76,8 @@ function attack(damage) {
 	}
 	
 	if(_target != undefined) {
-		_target.cur_hp -= damage
-		if (_target.cur_hp <= 0) {
+		_target.hp -= damage
+		if (_target.hp <= 0) {
 			_target.state = ENEMY_STATE.DEAD
 		}
 	}	
