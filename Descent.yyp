@@ -39,7 +39,7 @@
   "resources":[
     {"id":{"name":"a_block","path":"objects/a_block/a_block.yy",},},
     {"id":{"name":"a_draw_test","path":"objects/a_draw_test/a_draw_test.yy",},},
-    {"id":{"name":"a_status_test","path":"objects/a_status_test/a_status_test.yy",},},
+    {"id":{"name":"a_ritual_test","path":"objects/a_ritual_test/a_ritual_test.yy",},},
     {"id":{"name":"a_strength_test","path":"objects/a_strength_test/a_strength_test.yy",},},
     {"id":{"name":"a_strike","path":"objects/a_strike/a_strike.yy",},},
     {"id":{"name":"a_weak_test","path":"objects/a_weak_test/a_weak_test.yy",},},

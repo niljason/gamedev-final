@@ -6,7 +6,6 @@ if (hp <= 0) {
 
 if (state == ENEMY_STATE.DEAD) {
 	global.enemy_actions_remaining -= 1;
-
 	enemy_death(id);
 	exit;
 }

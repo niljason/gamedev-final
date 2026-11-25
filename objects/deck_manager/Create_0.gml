@@ -9,9 +9,15 @@ for (var i = 0; i < 5; i++) {
 	array_push(global.base_deck, strike);
 	array_push(global.base_deck, block);
 	
+	var ritual = instance_create_depth(_deckx, -200, 0, a_ritual_test)
+	array_push(global.base_deck, ritual);
+	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)
+	array_push(global.base_deck, strength);
+	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
+	array_push(global.base_deck, draw);
 	/* status is ritual and siphon
-	var status = instance_create_depth(_deckx, -200, 0, a_status_test)
-	array_push(global.base_deck, status);
+	var ritual = instance_create_depth(_deckx, -200, 0, a_ritual_test)
+	array_push(global.base_deck, ritual);
 	var weak = instance_create_depth(_deckx, -200, 0, a_weak_test)
 	array_push(global.base_deck, weak);
 	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)

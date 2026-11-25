@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"a_status_test",
+  "%Name":"a_ritual_test",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"a_status_test",
+  "name":"a_ritual_test",
   "overriddenProperties":[],
   "parent":{
     "name":"status_cards",
