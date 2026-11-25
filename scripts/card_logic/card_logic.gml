@@ -16,10 +16,12 @@ function play_card(_effects) {
 				gain_strength(str_val)
 				break
 			case "siphon":
-			
+				// this is just for testing
+				test_siphon(sphn_val)
 				break
 			case "weak":
-			
+				// this is just for testing
+				test_weakness(weak_val)
 				break
 			case "shuffle":
 			
@@ -50,11 +52,28 @@ function play_card(_effects) {
 }
 
 function attack(damage) {
+	var weakness_mult = 0.75
 	var dmg_falloff = 0.1
 	var _target = global.target_enemy
+	var _status = obj_player.status_effects
 	var _idx = array_get_index(global.enemy_instances, _target)
 	
+	// positioning dmg fall off
 	damage = floor(damage * (1 - dmg_falloff * _idx))
+	// status effects 
+	//strength 1st
+	damage += _status.strength
+	
+	// siphon is applied before weak 
+	var _sphn_stacks = _status.siphon
+	if(_sphn_stacks>0) {
+		damage -= _sphn_stacks
+		_status.siphon--
+	}
+	
+	if(_status.weak > 0) {
+		damage = floor(damage * weakness_mult)
+	}
 	
 	if(_target != undefined) {
 		_target.cur_hp -= damage
@@ -80,3 +99,11 @@ function gain_ritual(_val) {
 	obj_player.status_effects.ritual += _val
 }
 
+// testing
+function test_siphon(_val) {
+	obj_player.status_effects.siphon += _val
+}
+
+function test_weakness(_val) {
+	obj_player.status_effects.weak += _val
+}

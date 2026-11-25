@@ -13,7 +13,7 @@ if (_hovered) {
 	if(mouse_check_button_pressed(mb_left)) {
 		// play card
 		var can_play_card = instance_exists(deck_manager) 
-			&& global.game_state == GAME_STATE.START_TURN 
+			&& global.game_state == GAME_STATE.PLAYER_TURN
 			&& deck_manager.energy_count >= energy;
 		if (can_play_card) {
 			var _hand_index = -1;
@@ -25,7 +25,6 @@ if (_hovered) {
 				}
 			}
 
-			global.game_state = GAME_STATE.PLAY_CARD;
 			deck_manager.energy_count -= energy;
 			deck_manager.hand_needs_reposition = true
 			array_push(deck_manager.discard, deck_manager.hand[_hand_index]);

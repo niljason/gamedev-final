@@ -1,7 +1,15 @@
 if (global.game_state == GAME_STATE.START_BATTLE) {
 	global.game_state = GAME_STATE.START_TURN;
-} else if (global.game_state == GAME_STATE.PLAY_CARD) {
-	global.game_state = GAME_STATE.START_TURN;
+} 
+else if (global.game_state == GAME_STATE.START_TURN) {
+	global.game_state = GAME_STATE.PLAYER_TURN;
+	// set energy
+	combat_energy = base_energy + floor(obj_player.status_effects.ritual/10)
+	energy_count = combat_energy;
+	global.enemy_turn += 1;
+	global.enemy_actions_remaining = instance_number(enemy_base);
+} else if (global.game_state == GAME_STATE.PLAY_CARD){
+	global.game_state = GAME_STATE.PLAYER_TURN;
 } else if (global.game_state == GAME_STATE.END_TURN) {
 	// move all cards to the deck so it looks like drawing
 	base_card.x = deck_pile_hud.x
@@ -16,11 +24,11 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 	// draw a new hand
     draw_cards(turn_start_draw);
 	
-	// ritual status
-	var _combat_energy = base_energy + floor(obj_player.status_effects.ritual/10)
-	energy_count = _combat_energy;
-	global.enemy_turn += 1;
-	global.enemy_actions_remaining = instance_number(enemy_base);
+	// decrement ritual
+	var _ritual = obj_player.status_effects.ritual - 10
+	if(_ritual > 0) {
+		obj_player.status_effects.ritual = 10 + floor(_ritual * 0.75)
+	}
 	global.game_state = GAME_STATE.ENEMY_TURN;
 }
 

@@ -5,9 +5,7 @@ if (cur_hp <= 0) {
 }
 
 if (state == ENEMY_STATE.DEAD) {
-	if (global.game_state == GAME_STATE.ENEMY_TURN && last_action_turn != global.enemy_turn) {
-		global.enemy_actions_remaining -= 1;
-	}
+	global.enemy_actions_remaining -= 1;
 
 	enemy_death(id);
 	exit;

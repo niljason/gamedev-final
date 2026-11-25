@@ -5,12 +5,18 @@ for (var i = 0; i < 3; i++) {
 	// create the instances off screen
 	var _deckx = deck_pile_hud.x
 	var strike = instance_create_depth(_deckx, -200, 0, a_strike)
-	var block = instance_create_depth(_deckx, -200, 0, a_block)
-	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
+	//var block = instance_create_depth(_deckx, -200, 0, a_block)
 	array_push(global.base_deck, strike);
-	array_push(global.base_deck, block);
-	// testing
-	array_push(global.base_deck, draw);
+	//array_push(global.base_deck, block);
+	
+	/* status is ritual and siphon
+	var status = instance_create_depth(_deckx, -200, 0, a_status_test)
+	array_push(global.base_deck, status);
+	var weak = instance_create_depth(_deckx, -200, 0, a_weak_test)
+	array_push(global.base_deck, weak);
+	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)
+	array_push(global.base_deck, strength);
+	*/
 }
 
 // just copy the base deck to the in combat deck, and then shuffle it
@@ -54,10 +60,12 @@ discard = [];
 exhaust = [];
 
 base_energy = 3;
+combat_energy = base_energy
 energy_count = base_energy;
 enum GAME_STATE {
 	START_BATTLE,
 	START_TURN,
+	PLAYER_TURN,
 	PLAY_CARD,
 	CARD_STUFF,
 	END_TURN,

@@ -3,7 +3,7 @@ var _amount = 0;
 var _max_amount = 0;
 if (instance_exists(_deck_manager)) {
 	_amount = _deck_manager.energy_count;
-	_max_amount = _deck_manager.start_turn_energy;
+	_max_amount = _deck_manager.combat_energy;
 }
 
 event_inherited();
