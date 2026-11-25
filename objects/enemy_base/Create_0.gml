@@ -2,7 +2,7 @@ max_hp = 20
 hp = max_hp
 
 moveset = [
-	{attack: 1},
+	{attack: 7},
 	{attack: 2}
 ]
 move_index = 0
