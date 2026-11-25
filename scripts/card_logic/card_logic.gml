@@ -49,26 +49,27 @@ function play_card(_effects) {
 	}	
 }
 
-function attack(_val) {
+function attack(damage) {
+	var dmg_falloff = 0.1
 	var _target = global.target_enemy
+	var _idx = array_get_index(global.enemy_instances, _target)
+	
+	damage = floor(damage * (1 - dmg_falloff * _idx))
 	
 	if(_target != undefined) {
-		_target.cur_hp -= _val
+		_target.cur_hp -= damage
 		if (_target.cur_hp <= 0) {
-			// temporary delete
-			instance_destroy(_target)
+			_target.state = ENEMY_STATE.DEAD
 		}
 	}	
 }
 
-function gain_armor(_val) {
-	global.plyr_armor += _val
+function gain_armor(armor) {
+	global.plyr_armor += armor
 }
 
-function draw_from_deck(_val) {
-	var _deck = deck_manager.deck
-	var _hand = deck_manager.hand
-	array_push(_hand, array_pop(_deck))
+function draw_from_deck(num_cards) {
+	deck_manager.draw_cards(num_cards)
 }
 
 function gain_strength(_val) {

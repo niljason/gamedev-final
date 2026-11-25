@@ -1,5 +1,17 @@
-draw_self()
-draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
+if (state == ENEMY_STATE.DEAD) {
+	exit;
+}
+
+if(state == ENEMY_STATE.IDLE) {
+	// idle animation
+	draw_self()
+	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
+}
+else if(state == ENEMY_STATE.PULLED) {
+	draw_self()
+	draw_text(x, y-24, string(cur_hp) + "/" + string(max_hp))
+	pull_forward(pulled_x)
+}
 
 var _next_move = moveset[move_index];
 if (variable_struct_exists(_next_move, "attack")) {

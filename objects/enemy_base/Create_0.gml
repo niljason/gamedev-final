@@ -1,5 +1,6 @@
-max_hp = 100
+max_hp = 20
 cur_hp = max_hp
+
 moveset = [
 	{attack: 1},
 	{attack: 2}
@@ -13,3 +14,13 @@ status_effects = [
 	{siphon: 0},
 	{weak: 0}
 ]
+
+state = ENEMY_STATE.IDLE
+enum ENEMY_STATE {
+	IDLE,
+	PULLED,
+	PUSHED,
+	DEAD
+}
+
+pulled_x = x - 128
