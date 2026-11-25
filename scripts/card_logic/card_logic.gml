@@ -17,7 +17,7 @@ function play_card(_effects) {
 				break
 			case "siphon":
 				// this is just for testing
-				test_siphon(sphn_val)
+				test_siphon(siphon_val)
 				break
 			case "weak":
 				// this is just for testing
@@ -65,9 +65,9 @@ function attack(damage) {
 	damage += _status.strength
 	
 	// siphon is applied before weak 
-	var _sphn_stacks = _status.siphon
-	if(_sphn_stacks>0) {
-		damage -= _sphn_stacks
+	var _siphon_stacks = _status.siphon
+	if(_siphon_stacks>0) {
+		damage -= _siphon_stacks
 		_status.siphon--
 	}
 	

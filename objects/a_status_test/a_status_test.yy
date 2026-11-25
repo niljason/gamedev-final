@@ -8,8 +8,8 @@
   "name":"a_status_test",
   "overriddenProperties":[],
   "parent":{
-    "name":"skill_cards",
-    "path":"folders/Objects/cards/skill_cards.yy",
+    "name":"status_cards",
+    "path":"folders/Objects/cards/status_cards.yy",
   },
   "parentObjectId":{
     "name":"base_card_skill",

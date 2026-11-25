@@ -1,9 +1,9 @@
 // Inherit the parent event
 event_inherited();
 energy = 0;
-name = "Testing ritual and sphn Effects";
+name = "Testing ritual and siphon Effects";
 
 rit_val = 10
-sphn_val = 3
+siphon_val = 3
 
-card_effects = {ritual: rit_val, siphon: sphn_val}
+card_effects = {ritual: rit_val, siphon: siphon_val}

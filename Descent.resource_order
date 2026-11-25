@@ -3,6 +3,7 @@
     {"name":"Objects","order":1,"path":"folders/Objects.yy",},
     {"name":"cards","order":10,"path":"folders/Objects/cards.yy",},
     {"name":"base_cards","order":1,"path":"folders/Objects/cards/base_cards.yy",},
+    {"name":"status_cards","order":4,"path":"folders/Objects/cards/status_cards.yy",},
     {"name":"power_cards","order":3,"path":"folders/Objects/cards/power_cards.yy",},
     {"name":"skill_cards","order":2,"path":"folders/Objects/cards/skill_cards.yy",},
     {"name":"enemies","order":11,"path":"folders/Objects/enemies.yy",},
@@ -15,7 +16,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"a_draw_test","order":1,"path":"objects/a_draw_test/a_draw_test.yy",},
-    {"name":"a_status_test","order":2,"path":"objects/a_status_test/a_status_test.yy",},
     {"name":"a_strength_test","order":4,"path":"objects/a_strength_test/a_strength_test.yy",},
     {"name":"a_weak_test","order":3,"path":"objects/a_weak_test/a_weak_test.yy",},
     {"name":"base_card_attack","order":1,"path":"objects/base_card_attack/base_card_attack.yy",},
