@@ -30,9 +30,9 @@ if (global.game_state == GAME_STATE.ENEMY_TURN && last_action_turn != global.ene
 		switch (_action) {
 			case "attack":
 				var _damage = _value + strength;
-				var _blocked = min(global.plyr_armor, _damage);
-				global.plyr_armor -= _blocked;
-				global.plyr_hp -= _damage - _blocked;
+				var _blocked = min(obj_player.armor, _damage);
+				obj_player.armor -= _blocked;
+				obj_player.hp -= _damage - _blocked;
 				break;
 			case "strength":
 				strength += _value;

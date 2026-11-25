@@ -84,7 +84,7 @@ function attack(damage) {
 }
 
 function gain_armor(armor) {
-	global.plyr_armor += armor
+	obj_player.armor += armor
 }
 
 function draw_from_deck(num_cards) {

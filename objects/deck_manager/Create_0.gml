@@ -25,10 +25,36 @@ array_copy(deck, 0, global.base_deck, 0, array_length(global.base_deck));
 array_shuffle_ext(deck);
 
 hand = [];
+discard = [];
+exhaust = [];
+
 hand_needs_reposition = false
 hand_y = room_height - 168;
 turn_start_draw = 5;
 // for now hand just draw 5 from deck and removes those from the deck
+
+base_energy = 3;
+combat_energy = base_energy
+energy_count = base_energy;
+enum GAME_STATE {
+	START_BATTLE,
+	START_TURN,
+	PLAYER_TURN,
+	PLAY_CARD,
+	CARD_STUFF,
+	END_TURN,
+	ENEMY_TURN,
+	END_BATTLE,
+	NOTHING,
+}
+
+global.game_state = GAME_STATE.START_BATTLE;
+global.enemy_turn = 0;
+global.enemy_actions_remaining = 0;
+
+card_width = 128;
+card_offset = card_width / 8;
+card_height = 200;
 
 function draw_cards(num_cards) {
 	for (var i = 0; i < num_cards; i++) {
@@ -55,29 +81,3 @@ function draw_cards(num_cards) {
 	}
 }
 draw_cards(turn_start_draw);
-
-discard = [];
-exhaust = [];
-
-base_energy = 3;
-combat_energy = base_energy
-energy_count = base_energy;
-enum GAME_STATE {
-	START_BATTLE,
-	START_TURN,
-	PLAYER_TURN,
-	PLAY_CARD,
-	CARD_STUFF,
-	END_TURN,
-	ENEMY_TURN,
-	END_BATTLE,
-	NOTHING,
-}
-
-global.game_state = GAME_STATE.START_BATTLE;
-global.enemy_turn = 0;
-global.enemy_actions_remaining = 0;
-
-card_width = 128;
-card_offset = card_width / 8;
-card_height = 200;
