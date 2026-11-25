@@ -13,6 +13,8 @@ card_y = room_height - 168;
 target_y = card_y - 64;
 
 in_hand = false
+state_moving = false
+endx = x
 
 // card_affects will be object with key from CARD_EFFECTS:Int
 // affects with no need for number will just be 0

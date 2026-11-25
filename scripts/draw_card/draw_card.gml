@@ -5,3 +5,14 @@ function draw_card(_deck_manager, _x, _y, _card) {
 	
 	//draw_text(_x - _width/2, _y, _card.name);
 }
+
+function move_card(endx) {
+	x = lerp(x, endx, 0.05)
+	if (abs(endx - x) < 0.5) {
+		x = endx
+	}
+	
+	if(x == endx) {
+		state_moving = false	
+	}
+}
