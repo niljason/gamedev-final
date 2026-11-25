@@ -15,6 +15,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"a_draw_test","order":1,"path":"objects/a_draw_test/a_draw_test.yy",},
+    {"name":"a_status_test","order":2,"path":"objects/a_status_test/a_status_test.yy",},
     {"name":"base_card_attack","order":1,"path":"objects/base_card_attack/base_card_attack.yy",},
     {"name":"base_card_power","order":2,"path":"objects/base_card_power/base_card_power.yy",},
     {"name":"base_card_skill","order":3,"path":"objects/base_card_skill/base_card_skill.yy",},

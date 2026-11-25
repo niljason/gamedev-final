@@ -53,8 +53,8 @@ draw_cards(turn_start_draw);
 discard = [];
 exhaust = [];
 
-start_turn_energy = 3;
-energy_count = start_turn_energy;
+base_energy = 3;
+energy_count = base_energy;
 enum GAME_STATE {
 	START_BATTLE,
 	START_TURN,

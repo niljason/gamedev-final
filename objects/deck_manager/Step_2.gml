@@ -15,8 +15,10 @@ if (global.game_state == GAME_STATE.START_BATTLE) {
 
 	// draw a new hand
     draw_cards(turn_start_draw);
-
-	energy_count = start_turn_energy;
+	
+	// ritual status
+	var _combat_energy = base_energy + floor(obj_player.status_effects.ritual/10)
+	energy_count = _combat_energy;
 	global.enemy_turn += 1;
 	global.enemy_actions_remaining = instance_number(enemy_base);
 	global.game_state = GAME_STATE.ENEMY_TURN;

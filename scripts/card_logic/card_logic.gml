@@ -13,7 +13,7 @@ function play_card(_effects) {
 				draw_from_deck(draw_val)
 				break
 			case "strength":
-				gain_strength(strength_val)
+				gain_strength(str_val)
 				break
 			case "siphon":
 			
@@ -37,7 +37,7 @@ function play_card(_effects) {
 			
 				break
 			case "ritual":
-				gain_ritual(ritual_val)
+				gain_ritual(rit_val)
 				break
 			case "retain":
 			
