@@ -24,7 +24,7 @@ block
 strength
 siphon
 weak
-shuffle
+shuffl
 push
 pull
 exhaust

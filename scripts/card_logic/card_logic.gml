@@ -1,5 +1,5 @@
 function play_card(_effects) {
-	static effect_order = ["strength", "siphon", "weak", "attack", "block", "draw", "shuffle", "push", "pull", "ritual", "exhaust"]
+	static effect_order = ["strength", "siphon", "weak", "attack", "block", "draw", "push", "pull", "ritual", "exhaust"]
 	var _exhaust = false
 	for(var i = 0; i<array_length(effect_order); i++) {
 		var _key = effect_order[i]
@@ -25,8 +25,6 @@ function play_card(_effects) {
 				break
 			case "weak":
 				apply_weak(weak_val)
-				break
-			case "shuffle":
 				break
 			case "push":
 				push(push_val)
