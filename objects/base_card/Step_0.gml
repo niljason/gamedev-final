@@ -27,9 +27,7 @@ if (_hovered) {
 
 			deck_manager.energy_count -= energy;
 			deck_manager.hand_needs_reposition = true
-			array_push(deck_manager.discard, deck_manager.hand[_hand_index]);
-			array_delete(deck_manager.hand, _hand_index, 1);
-			
+		
 			play_card(card_effects)
 			in_hand = false
 		}

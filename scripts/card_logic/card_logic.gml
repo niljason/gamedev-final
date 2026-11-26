@@ -1,6 +1,6 @@
 function play_card(_effects) {
 	var _keys = struct_get_names(_effects)
-	print(string(_keys))
+	var _exhaust = false
 	for(var i = 0; i<array_length(_keys); i++) {
 		switch (_keys[i]){
 			case "attack":
@@ -16,38 +16,36 @@ function play_card(_effects) {
 				gain_strength(str_val)
 				break
 			case "siphon":
-				// this is just for testing
-				test_siphon(siphon_val)
+				apply_siphon(siphon_val)
 				break
 			case "weak":
-				// this is just for testing
-				test_weakness(weak_val)
+				apply_weak(weak_val)
 				break
 			case "shuffle":
-			
 				break
 			case "push":
-			
+				push(push_val)
 				break
 			case "pull":
-			
+				pull(pull_val)
 				break
 			case "exhaust":
-			
-				break
-			case "innate":
-			
+				_exhaust = true
 				break
 			case "ritual":
 				gain_ritual(rit_val)
 				break
-			case "retain":
-			
-				break
 			default:
 				break
 		}
-
+	
+		if (_exhaust) {
+			array_push(deck_manager.exhaust, id);  
+		} 
+		else {
+			array_push(deck_manager.discard, id)
+		}
+		array_delete(deck_manager.hand, array_get_index(deck_manager.hand, id), 1);
 	}	
 }
 
@@ -61,7 +59,7 @@ function attack(damage) {
 	// positioning dmg fall off
 	damage = floor(damage * (1 - dmg_falloff * _idx))
 	// status effects 
-	//strength 1st
+	// strength 1st
 	damage += _status.strength
 	
 	// siphon is applied before weak 
@@ -98,6 +96,51 @@ function gain_strength(_val) {
 function gain_ritual(_val) {
 	obj_player.status_effects.ritual += _val
 }
+
+function apply_siphon(_val) {
+	global.target_enemy.status_effects.siphon += _val
+}
+
+function apply_weak(_val) {
+	global.target_enemy.status_effects.weak += _val
+}
+
+function push(_val) {
+	var _idx = array_get_index(global.enemy_instances, global.target_enemy)
+	var enemy_count = array_length(global.enemy_instances)
+	var enemy_passed = min(_val, enemy_count - 1 - _idx)
+
+	for(var i = _idx + 1; i<=enemy_passed; i++) {
+		with(global.enemy_instances[i]) {
+			state = ENEMY_STATE.PULLED
+			pulled_x = x - 128
+		}
+	}
+	
+	with(global.target_enemy) {
+		state = ENEMY_STATE.PUSHED
+		pushed_x = x + 128 * enemy_passed
+	}
+}
+
+function pull(_val) {
+	var _idx = array_get_index(global.enemy_instances, global.target_enemy)
+	var enemy_count = array_length(global.enemy_instances)
+	var enemy_passed = min(_val, _idx)
+
+	for(var i = enemy_passed; i>=0; i--) {
+		with(global.enemy_instances[i]) {
+			state = ENEMY_STATE.PUSHED
+			pulled_x = x + 128
+		}
+	}
+	
+	with(global.target_enemy) {
+		state = ENEMY_STATE.PULLED
+		pushed_x = x - 128 * enemy_passed
+	}
+}
+
 
 // testing
 function test_siphon(_val) {

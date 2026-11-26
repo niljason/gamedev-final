@@ -2,8 +2,8 @@ max_hp = 20
 hp = max_hp
 
 moveset = [
-	{attack: 7},
-	{attack: 2}
+	{attack: 2},
+	{attack: 1}
 ]
 move_index = 0
 strength = 0
@@ -24,3 +24,4 @@ enum ENEMY_STATE {
 }
 
 pulled_x = x - 128
+pushed_x = x + 128

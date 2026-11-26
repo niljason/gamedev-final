@@ -17,7 +17,10 @@ function enemy_death(_id){
 
 function update_enemy_pos(idx) {
 	for(var i = idx; i<array_length(global.enemy_instances); i++) {
-		global.enemy_instances[i].state = ENEMY_STATE.PULLED
+		with(global.enemy_instances[i]) {
+			state = ENEMY_STATE.PULLED
+			pulled_x = x - 128
+		}
 	}
 }
 
@@ -33,7 +36,7 @@ function spawn_enemies() {
 	}
 }
 
-function pull_forward(endx) {
+function move_enemy(endx) {
 	x = lerp(x, endx, 0.05)
 	if (abs(endx - x) < 0.5) {
 		x = endx
@@ -43,3 +46,5 @@ function pull_forward(endx) {
 		state = ENEMY_STATE.IDLE	
 	}
 }
+
+

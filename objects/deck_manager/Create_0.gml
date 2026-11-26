@@ -9,19 +9,25 @@ for (var i = 0; i < 5; i++) {
 	array_push(global.base_deck, strike);
 	array_push(global.base_deck, block);
 	
-	var ritual = instance_create_depth(_deckx, -200, 0, a_ritual_test)
-	array_push(global.base_deck, ritual);
-	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)
-	array_push(global.base_deck, strength);
 	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
 	array_push(global.base_deck, draw);
-	/* status is ritual and siphon
+	
+	var pull = instance_create_depth(_deckx, -200, 0, a_pull_test)
+	array_push(global.base_deck, pull);
+	var push = instance_create_depth(_deckx, -200, 0, a_push_test)
+	array_push(global.base_deck, push);
+	
+	/* testing card effects
 	var ritual = instance_create_depth(_deckx, -200, 0, a_ritual_test)
 	array_push(global.base_deck, ritual);
 	var weak = instance_create_depth(_deckx, -200, 0, a_weak_test)
 	array_push(global.base_deck, weak);
 	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)
 	array_push(global.base_deck, strength);
+	var pull = instance_create_depth(_deckx, -200, 0, a_pull_test)
+	array_push(global.base_deck, pull);
+	var push = instance_create_depth(_deckx, -200, 0, a_push_test)
+	array_push(global.base_deck, push);
 	*/
 }
 

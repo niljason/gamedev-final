@@ -1,8 +1,8 @@
 // Inherit the parent event
 event_inherited();
 energy = 0;
-name = "Weakened";
-text = "Gain 1 Weak";
-weak_val = 3
+name = "Push";
+text = "Push 2 test";
+push_val = 2
 
-card_effects = {weak: weak_val}
+card_effects = {push: push_val}
