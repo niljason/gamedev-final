@@ -1,6 +1,10 @@
 event_inherited();
 sprite_index = spr_hud_circle;
 radius = 32;
-hud_x = radius + 24;
+gui_left_margin = 24;
+gui_bottom_margin = 152;
+label_y_offset = -12;
+amount_y_offset = 14;
+hud_x = radius + gui_left_margin;
 hud_y = 0;
 hud_shape = "circle";

@@ -1,6 +1,6 @@
 event_inherited();
 
-hud_x = display_get_gui_width() - 72;
+hud_x = display_get_gui_width() - gui_right_margin;
 hud_y = display_get_gui_height() / 2;
 
 if (hovered && mouse_check_button_pressed(mb_left)

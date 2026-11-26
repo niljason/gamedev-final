@@ -4,3 +4,7 @@ pile_width = 64;
 pile_height = 96;
 hud_x = 0;
 hud_y = 0;
+gui_right_margin = 72;
+gui_bottom_margin = 48;
+label_y_offset = -18;
+amount_y_offset = 14;

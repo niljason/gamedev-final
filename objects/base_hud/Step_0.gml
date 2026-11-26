@@ -14,5 +14,5 @@ if (click_timer > 0) {
 	click_timer--;
 }
 if (hovered && mouse_check_button_pressed(mb_left)) {
-	click_timer = 10;
+	click_timer = click_flash_duration;
 }
