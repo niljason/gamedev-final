@@ -2,11 +2,6 @@ if (!in_hand) {
 	return
 }
 
-center_x = x;
-energy_y = y - sprite_width / 2
-name_y = y + 48 - sprite_width / 2;
-text_y = y + 72 - sprite_width / 2;
-
 var _hovered = hover()
 
 if (_hovered) {
