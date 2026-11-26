@@ -67,8 +67,6 @@
     {"id":{"name":"draw_card","path":"scripts/draw_card/draw_card.yy",},},
     {"id":{"name":"enemy_logic","path":"scripts/enemy_logic/enemy_logic.yy",},},
     {"id":{"name":"utility","path":"scripts/utility/utility.yy",},},
-    {"id":{"name":"spr_base_card","path":"sprites/spr_base_card/spr_base_card.yy",},},
-    {"id":{"name":"spr_card_hb","path":"sprites/spr_card_hb/spr_card_hb.yy",},},
     {"id":{"name":"spr_card","path":"sprites/spr_card/spr_card.yy",},},
     {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},},
     {"id":{"name":"spr_hud_circle","path":"sprites/spr_hud_circle/spr_hud_circle.yy",},},
