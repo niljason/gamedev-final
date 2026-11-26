@@ -6,8 +6,6 @@ if (global.input_locked) {
 
 event_inherited();
 
-// Opening on release prevents the viewer from receiving the same click as a close.
-if (hovered && mouse_check_button_released(mb_left)
-&& instance_exists(_viewer) && !_viewer.is_open) {
+if (hovered && mouse_check_button_released(mb_left) && instance_exists(_viewer) && !_viewer.is_open) {
 	_viewer.open_pile(pile_key, pile_label);
 }

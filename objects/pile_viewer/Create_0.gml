@@ -29,7 +29,7 @@ function get_pile_cards() {
 	switch (pile_key) {
 		case "deck": return _deck_manager.deck;
 		case "discard": return _deck_manager.discard;
-		case "deck": return; // implement later
+		case "oops": return; // implement later (deck should be renamed draw)
 	}
 
 	return [];
