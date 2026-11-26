@@ -59,6 +59,8 @@
     {"id":{"name":"energy_hud","path":"objects/energy_hud/energy_hud.yy",},},
     {"id":{"name":"game_manager","path":"objects/game_manager/game_manager.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"pile_hud","path":"objects/pile_hud/pile_hud.yy",},},
+    {"id":{"name":"pile_viewer","path":"objects/pile_viewer/pile_viewer.yy",},},
     {"id":{"name":"target_hud","path":"objects/target_hud/target_hud.yy",},},
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"id":{"name":"rm_map","path":"rooms/rm_map/rm_map.yy",},},

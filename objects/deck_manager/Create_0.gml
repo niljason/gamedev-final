@@ -64,10 +64,6 @@ global.game_state = GAME_STATE.START_BATTLE;
 global.enemy_turn = 0;
 global.enemy_actions_remaining = 0;
 
-card_width = 256;
-card_offset = -64;
-card_height = 256;
-
 function draw_cards(num_cards) {
 	for (var i = 0; i < num_cards; i++) {
 		if (array_length(deck) <= 0 && array_length(discard) > 0) {
@@ -86,7 +82,7 @@ function draw_cards(num_cards) {
 		var next_card = array_pop(deck)
 		next_card.y = hand_y
 		next_card.card_original_y = hand_y
-		next_card.target_y = hand_y - card_height / 2
+		next_card.target_y = hand_y - global.card_height / 2
 		next_card.in_hand = true
 		array_push(hand, next_card);
 		hand_needs_reposition = true

@@ -4,7 +4,7 @@ if (!in_hand) {
 
 var _hovered = hover()
 
-if (_hovered) {
+if (_hovered && !global.input_locked) {
 	if(mouse_check_button_pressed(mb_left)) {
 		// play card
 		var can_play_card = instance_exists(deck_manager) 

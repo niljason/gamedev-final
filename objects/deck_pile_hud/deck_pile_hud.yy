@@ -4,7 +4,6 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"deck_pile_hud",
@@ -14,8 +13,8 @@
     "path":"folders/Objects/managers/hud.yy",
   },
   "parentObjectId":{
-    "name":"base_hud",
-    "path":"objects/base_hud/base_hud.yy",
+    "name":"pile_hud",
+    "path":"objects/pile_hud/pile_hud.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
