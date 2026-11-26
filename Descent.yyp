@@ -29,11 +29,12 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"LinLibertine_RZ.ttf","CopyToMask":-1,"filePath":"datafiles","name":"LinLibertine_RZ.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Roboto-Medium.ttf","CopyToMask":-1,"filePath":"datafiles","name":"Roboto-Medium.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2026.1.0.27",
   },
   "name":"Descent",
   "resources":[
