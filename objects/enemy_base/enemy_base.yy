@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_base",
-    "path":"sprites/spr_enemy_base/spr_enemy_base.yy",
+    "name":"spr_slime_small",
+    "path":"sprites/spr_slime_small/spr_slime_small.yy",
   },
   "spriteMaskId":null,
   "visible":true,

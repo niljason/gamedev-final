@@ -34,5 +34,6 @@
     {"name":"spr_card","order":2,"path":"sprites/spr_card/spr_card.yy",},
     {"name":"spr_hud_target","order":1,"path":"sprites/spr_hud_target/spr_hud_target.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"spr_slime_small","order":3,"path":"sprites/spr_slime_small/spr_slime_small.yy",},
   ],
 }
