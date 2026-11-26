@@ -33,9 +33,9 @@ for (var i = 0; i < array_length(_cards); i++) {
 	var _column = i % cards_per_row;
 	var _x = _grid_left + _card_width / 2 + _column * (_card_width + global.card_offset);
 	var _y = _grid_top + _card_height / 2 + _row * (_card_height + row_gap) - scroll_y;
-	if (_y + _card_height / 2 < _grid_top || _y - _card_height / 2 > _grid_bottom) {
-		continue;
-	}
+	//if (_y + _card_height / 2 < _grid_top || _y - _card_height / 2 > _grid_bottom) {
+	//	continue;
+	//}
 
 	draw_card_at(_card, _x, _y);
 }
