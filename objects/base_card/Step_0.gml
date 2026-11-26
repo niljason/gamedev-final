@@ -3,9 +3,9 @@ if (!in_hand) {
 }
 
 center_x = x;
-energy_y = card_y - sprite_width / 2
-name_y = card_y + 48 - sprite_width / 2;
-text_y = card_y + 72 - sprite_width / 2;
+energy_y = y - sprite_width / 2
+name_y = y + 48 - sprite_width / 2;
+text_y = y + 72 - sprite_width / 2;
 
 var _hovered = hover()
 
@@ -13,7 +13,7 @@ if (_hovered) {
 	if(mouse_check_button_pressed(mb_left)) {
 		// play card
 		var can_play_card = instance_exists(deck_manager) 
-			&& global.game_state == GAME_STATE.START_TURN 
+			&& global.game_state == GAME_STATE.PLAYER_TURN
 			&& deck_manager.energy_count >= energy;
 		if (can_play_card) {
 			var _hand_index = -1;
@@ -25,19 +25,16 @@ if (_hovered) {
 				}
 			}
 
-			global.game_state = GAME_STATE.PLAY_CARD;
 			deck_manager.energy_count -= energy;
 			deck_manager.hand_needs_reposition = true
-			array_push(deck_manager.discard, deck_manager.hand[_hand_index]);
-			array_delete(deck_manager.hand, _hand_index, 1);
-			
+		
 			play_card(card_effects)
 			in_hand = false
 		}
 	}
-	card_y = lerp(card_y, target_y, 0.1);
+	y = lerp(y, target_y, 0.9);
 } else {
-	card_y = lerp(card_y, y, 0.2);
+	y = lerp(y, card_original_y, 0.2);
 }
 
 if(state_moving) {

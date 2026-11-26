@@ -1,16 +1,34 @@
 // base deck --> every card in the deck
 // change to cur deck instead for battles
 global.base_deck = []
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < 5; i++) {
 	// create the instances off screen
 	var _deckx = deck_pile_hud.x
 	var strike = instance_create_depth(_deckx, -200, 0, a_strike)
 	var block = instance_create_depth(_deckx, -200, 0, a_block)
-	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
 	array_push(global.base_deck, strike);
 	array_push(global.base_deck, block);
-	// testing
+	
+	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
 	array_push(global.base_deck, draw);
+	
+	var pull = instance_create_depth(_deckx, -200, 0, a_pull_test)
+	array_push(global.base_deck, pull);
+	var push = instance_create_depth(_deckx, -200, 0, a_push_test)
+	array_push(global.base_deck, push);
+	
+	/* testing card effects
+	var ritual = instance_create_depth(_deckx, -200, 0, a_ritual_test)
+	array_push(global.base_deck, ritual);
+	var weak = instance_create_depth(_deckx, -200, 0, a_weak_test)
+	array_push(global.base_deck, weak);
+	var strength = instance_create_depth(_deckx, -200, 0, a_strength_test)
+	array_push(global.base_deck, strength);
+	var pull = instance_create_depth(_deckx, -200, 0, a_pull_test)
+	array_push(global.base_deck, pull);
+	var push = instance_create_depth(_deckx, -200, 0, a_push_test)
+	array_push(global.base_deck, push);
+	*/
 }
 
 // just copy the base deck to the in combat deck, and then shuffle it
@@ -19,10 +37,36 @@ array_copy(deck, 0, global.base_deck, 0, array_length(global.base_deck));
 array_shuffle_ext(deck);
 
 hand = [];
+discard = [];
+exhaust = [];
+
 hand_needs_reposition = false
-hand_y = room_height - 168;
+hand_y = room_height;
 turn_start_draw = 5;
 // for now hand just draw 5 from deck and removes those from the deck
+
+base_energy = 3;
+combat_energy = base_energy
+energy_count = base_energy;
+enum GAME_STATE {
+	START_BATTLE,
+	START_TURN,
+	PLAYER_TURN,
+	PLAY_CARD,
+	CARD_STUFF,
+	END_TURN,
+	ENEMY_TURN,
+	END_BATTLE,
+	NOTHING,
+}
+
+global.game_state = GAME_STATE.START_BATTLE;
+global.enemy_turn = 0;
+global.enemy_actions_remaining = 0;
+
+card_width = 256;
+card_offset = -64;
+card_height = 256;
 
 function draw_cards(num_cards) {
 	for (var i = 0; i < num_cards; i++) {
@@ -41,35 +85,11 @@ function draw_cards(num_cards) {
 		// we can always determine where the y of the card is supposed to be
 		var next_card = array_pop(deck)
 		next_card.y = hand_y
-		next_card.card_y = hand_y
-		next_card.target_y = hand_y - 64
+		next_card.card_original_y = hand_y
+		next_card.target_y = hand_y - card_height / 2
 		next_card.in_hand = true
 		array_push(hand, next_card);
 		hand_needs_reposition = true
 	}
 }
 draw_cards(turn_start_draw);
-
-discard = [];
-exhaust = [];
-
-start_turn_energy = 3;
-energy_count = start_turn_energy;
-enum GAME_STATE {
-	START_BATTLE,
-	START_TURN,
-	PLAY_CARD,
-	CARD_STUFF,
-	END_TURN,
-	ENEMY_TURN,
-	END_BATTLE,
-	NOTHING,
-}
-
-global.game_state = GAME_STATE.START_BATTLE;
-global.enemy_turn = 0;
-global.enemy_actions_remaining = 0;
-
-card_width = 128;
-card_offset = card_width / 8;
-card_height = 200;

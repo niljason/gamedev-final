@@ -4,7 +4,7 @@ if(global.game_state == GAME_STATE.START_BATTLE and array_length(global.enemy_in
 }
 
 if (global.game_state == GAME_STATE.ENEMY_TURN && global.enemy_actions_remaining <= 0) {
-	global.plyr_armor = 0;
+	obj_player.armor = 0;
 	global.game_state = GAME_STATE.START_TURN;
 }
 

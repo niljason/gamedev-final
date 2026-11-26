@@ -1,14 +1,11 @@
 // end player turn
 // commit actions
-if (cur_hp <= 0) {
+if (hp <= 0) {
 	state = ENEMY_STATE.DEAD;
 }
 
 if (state == ENEMY_STATE.DEAD) {
-	if (global.game_state == GAME_STATE.ENEMY_TURN && last_action_turn != global.enemy_turn) {
-		global.enemy_actions_remaining -= 1;
-	}
-
+	global.enemy_actions_remaining -= 1;
 	enemy_death(id);
 	exit;
 }
@@ -32,9 +29,9 @@ if (global.game_state == GAME_STATE.ENEMY_TURN && last_action_turn != global.ene
 		switch (_action) {
 			case "attack":
 				var _damage = _value + strength;
-				var _blocked = min(global.plyr_armor, _damage);
-				global.plyr_armor -= _blocked;
-				global.plyr_hp -= _damage - _blocked;
+				var _blocked = min(obj_player.armor, _damage);
+				obj_player.armor -= _blocked;
+				obj_player.hp -= _damage - _blocked;
 				break;
 			case "strength":
 				strength += _value;
