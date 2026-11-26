@@ -25,6 +25,7 @@
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"cards","folderPath":"folders/Sprites/cards.yy","name":"cards","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"enemy","folderPath":"folders/Sprites/enemy.yy","name":"enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
@@ -54,6 +55,7 @@
     {"id":{"name":"deck_pile_hud","path":"objects/deck_pile_hud/deck_pile_hud.yy",},},
     {"id":{"name":"discard_pile_hud","path":"objects/discard_pile_hud/discard_pile_hud.yy",},},
     {"id":{"name":"end_turn_hud","path":"objects/end_turn_hud/end_turn_hud.yy",},},
+    {"id":{"name":"enemy_armored","path":"objects/enemy_armored/enemy_armored.yy",},},
     {"id":{"name":"enemy_base","path":"objects/enemy_base/enemy_base.yy",},},
     {"id":{"name":"enemy_manager","path":"objects/enemy_manager/enemy_manager.yy",},},
     {"id":{"name":"energy_hud","path":"objects/energy_hud/energy_hud.yy",},},
@@ -70,6 +72,7 @@
     {"id":{"name":"spr_base_card","path":"sprites/spr_base_card/spr_base_card.yy",},},
     {"id":{"name":"spr_card_hb","path":"sprites/spr_card_hb/spr_card_hb.yy",},},
     {"id":{"name":"spr_card","path":"sprites/spr_card/spr_card.yy",},},
+    {"id":{"name":"spr_enemy_armored","path":"sprites/spr_enemy_armored/spr_enemy_armored.yy",},},
     {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},},
     {"id":{"name":"spr_hud_circle","path":"sprites/spr_hud_circle/spr_hud_circle.yy",},},
     {"id":{"name":"spr_hud_rectangle","path":"sprites/spr_hud_rectangle/spr_hud_rectangle.yy",},},

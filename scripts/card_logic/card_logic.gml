@@ -12,7 +12,7 @@ function play_card(_effects) {
 				attack(atk_val)
 				break
 			case "block":
-				gain_armor(armor_val)
+				gain_block(block_val)
 				break
 			case "draw":
 				draw_from_deck(draw_val)
@@ -84,8 +84,8 @@ function attack(damage) {
 	}	
 }
 
-function gain_armor(armor) {
-	obj_player.armor += armor
+function gain_block(_val) {
+	obj_player.block += _val
 }
 
 function draw_from_deck(num_cards) {

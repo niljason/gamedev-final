@@ -1,6 +1,6 @@
 max_hp = 30
 hp = max_hp
-armor = 0
+block = 0
 
 x = room_width/2 - 400
 y = room_height/2

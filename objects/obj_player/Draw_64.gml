@@ -1,7 +1,7 @@
 if(room == rm_main) {
 	draw_self()	
 	draw_text(x, y-48, string(hp) + "/" + string(max_hp))
-	draw_text(x, y-24, "armor:" + string(armor))
+	draw_text(x, y-24, "armor:" + string(block))
 	
 	var _keys = struct_get_names(status_effects)
 	var start_pos = 0;

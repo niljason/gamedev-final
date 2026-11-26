@@ -32,7 +32,7 @@ function spawn_enemies() {
 	var _offset = 128
 	
 	for(var i = 0; i<array_length(global.enemy_types); i++) {
-		array_push(global.enemy_instances, instance_create_layer(_x + i * _offset, _y, 0, enemy_base))
+		array_push(global.enemy_instances, instance_create_layer(_x + i * _offset, _y, 0, global.enemy_types[i]))
 	}
 }
 
@@ -47,4 +47,44 @@ function move_enemy(endx) {
 	}
 }
 
+function draw_enemy_info() {
+	var _offy = 24
+	var _starty = y + sprite_height + 16
+	draw_self()
+	draw_text(x, y-24, string(hp) + "/" + string(max_hp))
+	
+	var _line = 0
+	var _keys = struct_get_names(status_effects)
+	for(var i = 0; i < array_length(_keys); i++) {
+		var _status = _keys[i]
+		var _amount = status_effects[$ _status]
 
+		if (_amount > 0) {
+			draw_text(x, _starty + _line * _offy, _status + ": " + string(_amount))
+			_line++
+		}
+		// display icon and number for future
+	}
+}
+
+function enemy_turn(_move, _actions) {
+	for (var i = 0; i < array_length(_actions); i++) {
+		var _action = _actions[i];
+		var _value = variable_struct_get(_move, _action);
+
+		switch (_action) {
+			case "attack":
+				var _damage = _value + strength;
+				var _blocked = min(obj_player.block, _damage);
+				obj_player.block -= _blocked;
+				obj_player.hp -= _damage - _blocked;
+				break;
+			case "strength":
+				status_effects.strength += _value;
+				break;
+			case "block":
+				status_effects.block += _value;
+				break;
+		}
+	}	
+}

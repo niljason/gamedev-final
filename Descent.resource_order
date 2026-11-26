@@ -13,6 +13,7 @@
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
     {"name":"Sprites","order":4,"path":"folders/Sprites.yy",},
     {"name":"cards","order":1,"path":"folders/Sprites/cards.yy",},
+    {"name":"enemy","order":3,"path":"folders/Sprites/enemy.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"a_draw_test","order":1,"path":"objects/a_draw_test/a_draw_test.yy",},
@@ -24,6 +25,7 @@
     {"name":"base_card_power","order":2,"path":"objects/base_card_power/base_card_power.yy",},
     {"name":"base_card_skill","order":3,"path":"objects/base_card_skill/base_card_skill.yy",},
     {"name":"deck_manager","order":1,"path":"objects/deck_manager/deck_manager.yy",},
+    {"name":"enemy_armored","order":1,"path":"objects/enemy_armored/enemy_armored.yy",},
     {"name":"enemy_manager","order":2,"path":"objects/enemy_manager/enemy_manager.yy",},
     {"name":"target_hud","order":1,"path":"objects/target_hud/target_hud.yy",},
     {"name":"rm_main","order":2,"path":"rooms/rm_main/rm_main.yy",},
@@ -33,6 +35,7 @@
     {"name":"utility","order":2,"path":"scripts/utility/utility.yy",},
     {"name":"spr_card_hb","order":1,"path":"sprites/spr_card_hb/spr_card_hb.yy",},
     {"name":"spr_card","order":2,"path":"sprites/spr_card/spr_card.yy",},
+    {"name":"spr_enemy_armored","order":1,"path":"sprites/spr_enemy_armored/spr_enemy_armored.yy",},
     {"name":"spr_hud_target","order":1,"path":"sprites/spr_hud_target/spr_hud_target.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
   ],
