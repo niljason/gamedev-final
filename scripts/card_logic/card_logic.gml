@@ -1,8 +1,13 @@
 function play_card(_effects) {
-	var _keys = struct_get_names(_effects)
+	static effect_order = ["strength", "siphon", "weak", "attack", "block", "draw", "shuffle", "push", "pull", "ritual", "exhaust"]
 	var _exhaust = false
-	for(var i = 0; i<array_length(_keys); i++) {
-		switch (_keys[i]){
+	for(var i = 0; i<array_length(effect_order); i++) {
+		var _key = effect_order[i]
+		if (!struct_exists(_effects, _key)) {
+			continue
+		}
+		
+		switch (_key){
 			case "attack":
 				attack(atk_val)
 				break
@@ -106,11 +111,14 @@ function apply_weak(_val) {
 }
 
 function push(_val) {
+	if (!instance_exists(global.target_enemy) || global.target_enemy.hp <= 0) {
+		return
+	}
 	var _idx = array_get_index(global.enemy_instances, global.target_enemy)
 	var enemy_count = array_length(global.enemy_instances)
 	var enemy_passed = min(_val, enemy_count - 1 - _idx)
 
-	for(var i = _idx + 1; i<=enemy_passed; i++) {
+	for(var i = _idx + 1; i<=_idx + enemy_passed; i++) {
 		with(global.enemy_instances[i]) {
 			state = ENEMY_STATE.PULLED
 			pulled_x = x - 128
@@ -121,24 +129,39 @@ function push(_val) {
 		state = ENEMY_STATE.PUSHED
 		pushed_x = x + 128 * enemy_passed
 	}
+	
+	var _type = global.enemy_types[_idx]
+	array_delete(global.enemy_instances, _idx, 1)
+	array_insert(global.enemy_instances, _idx + enemy_passed, global.target_enemy)
+	array_delete(global.enemy_types, _idx, 1)
+	array_insert(global.enemy_types, _idx + enemy_passed, _type)
 }
 
 function pull(_val) {
+	if (!instance_exists(global.target_enemy) || global.target_enemy.hp <= 0) {
+		return
+	}
 	var _idx = array_get_index(global.enemy_instances, global.target_enemy)
 	var enemy_count = array_length(global.enemy_instances)
 	var enemy_passed = min(_val, _idx)
 
-	for(var i = enemy_passed; i>=0; i--) {
+	for(var i = _idx - 1; i>=_idx - enemy_passed; i--) {
 		with(global.enemy_instances[i]) {
 			state = ENEMY_STATE.PUSHED
-			pulled_x = x + 128
+			pushed_x = x + 128
 		}
 	}
 	
 	with(global.target_enemy) {
 		state = ENEMY_STATE.PULLED
-		pushed_x = x - 128 * enemy_passed
+		pulled_x = x - 128 * enemy_passed
 	}
+	
+	var _type = global.enemy_types[_idx]
+	array_delete(global.enemy_instances, _idx, 1)
+	array_insert(global.enemy_instances, _idx - enemy_passed, global.target_enemy)
+	array_delete(global.enemy_types, _idx, 1)
+	array_insert(global.enemy_types, _idx - enemy_passed, _type)
 }
 
 
