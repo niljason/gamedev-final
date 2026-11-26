@@ -43,15 +43,15 @@ function play_card(_effects) {
 			default:
 				break
 		}
-	
-		if (_exhaust) {
-			array_push(deck_manager.exhaust, id);  
-		} 
-		else {
-			array_push(deck_manager.discard, id)
-		}
-		array_delete(deck_manager.hand, array_get_index(deck_manager.hand, id), 1);
 	}	
+	
+	if (_exhaust) {
+		array_push(deck_manager.exhaust, id);  
+	} 
+	else {
+		array_push(deck_manager.discard, id)
+	}
+	array_delete(deck_manager.hand, array_get_index(deck_manager.hand, id), 1);
 }
 
 function attack(damage) {
@@ -91,7 +91,9 @@ function gain_armor(armor) {
 }
 
 function draw_from_deck(num_cards) {
-	deck_manager.draw_cards(num_cards)
+	with (deck_manager) {
+		draw_cards(num_cards)
+	}
 }
 
 function gain_strength(_val) {
