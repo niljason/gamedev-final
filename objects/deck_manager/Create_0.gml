@@ -3,7 +3,7 @@
 global.base_deck = []
 for (var i = 0; i < 5; i++) {
 	// create the instances off screen
-	var _deckx = deck_pile_hud.x
+	var _deckx = draw_pile_hud.x
 	var strike = instance_create_depth(_deckx, -200, 0, a_strike)
 	var block = instance_create_depth(_deckx, -200, 0, a_block)
 	array_push(global.base_deck, strike);

@@ -12,7 +12,7 @@ else if (global.game_state == GAME_STATE.START_TURN) {
 	global.game_state = GAME_STATE.PLAYER_TURN;
 } else if (global.game_state == GAME_STATE.END_TURN) {
 	// move all cards to the deck so it looks like drawing
-	base_card.x = deck_pile_hud.x
+	base_card.x = draw_pile_hud.x
 	
 	// discard hand (might need more code for retain cards)
 	while (array_length(hand) > 0) {

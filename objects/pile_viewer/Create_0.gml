@@ -20,17 +20,36 @@ function open_pile(_pile_key, _pile_label) {
 	scroll_target_y = 0;
 }
 
+function pile_sorter(current, next) {
+	if (current.name > next.name) {
+		return 1
+	} else if (current.name < next.name) {
+		return -1
+	}
+	return 0
+}
+
 function get_pile_cards() {
 	var _deck_manager = instance_find(deck_manager, 0);
 	if (!instance_exists(_deck_manager)) {
 		return [];
 	}
-
+	var cards = []
 	switch (pile_key) {
-		case "deck": return _deck_manager.deck;
-		case "discard": return _deck_manager.discard;
+		case "draw":
+			cards = _deck_manager.deck
+			break;
+		case "deck": 
+			cards = global.base_deck
+			break;
+		case "discard":
+			cards = _deck_manager.discard
+			break;
 		case "oops": return; // implement later (deck should be renamed draw)
 	}
-
-	return [];
+	var len = array_length(cards)
+	var sorted = array_create(len)
+	array_copy(sorted, 0, cards, 0, len)
+	array_sort(sorted, pile_sorter);
+	return sorted
 }
