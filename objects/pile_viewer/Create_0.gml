@@ -37,7 +37,7 @@ function get_pile_cards() {
 	var cards = []
 	switch (pile_key) {
 		case "draw":
-			cards = _deck_manager.deck
+			cards = _deck_manager.draw
 			break;
 		case "deck": 
 			cards = global.base_deck
@@ -45,7 +45,7 @@ function get_pile_cards() {
 		case "discard":
 			cards = _deck_manager.discard
 			break;
-		case "oops": return; // implement later (deck should be renamed draw)
+		case "oops": return; // implement later
 	}
 	var len = array_length(cards)
 	var sorted = array_create(len)

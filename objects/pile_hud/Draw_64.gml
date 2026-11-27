@@ -3,7 +3,7 @@ var _amount = 0;
 if (instance_exists(_deck_manager)) {
 	switch (pile_key) {
 		case "draw":
-			_amount = array_length(_deck_manager.deck);
+			_amount = array_length(_deck_manager.draw);
 			break;
 		case "discard":
 			_amount = array_length(_deck_manager.discard);
