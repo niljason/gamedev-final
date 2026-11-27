@@ -4,11 +4,6 @@ energy = 0;
 art_sprite = noone;
 card_sprite = spr_card;
 
-center_x = x;
-energy_y = y
-name_y = y + 48;
-text_y = y + 72;
-
 card_original_y = y
 target_y = y - 64;
 

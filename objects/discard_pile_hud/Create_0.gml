@@ -1,6 +1,7 @@
 event_inherited();
-sprite_index = spr_hud_rectangle;
-pile_width = 64;
-pile_height = 96;
+pile_key = "discard";
+pile_label = "DISCARD";
 hud_x = 0;
 hud_y = 0;
+gui_right_margin = 72;
+gui_bottom_margin = 48;

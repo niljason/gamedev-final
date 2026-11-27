@@ -1,16 +1,17 @@
 // base deck --> every card in the deck
 // change to cur deck instead for battles
 global.base_deck = []
+draw = []
 for (var i = 0; i < 5; i++) {
 	// create the instances off screen
-	var _deckx = deck_pile_hud.x
-	var strike = instance_create_depth(_deckx, -200, 0, a_strike)
-	var block = instance_create_depth(_deckx, -200, 0, a_block)
-	array_push(global.base_deck, strike);
-	array_push(global.base_deck, block);
+	var _deckx = draw_pile_hud.x
+	var _strike = instance_create_depth(_deckx, -200, 0, a_strike)
+	var _block = instance_create_depth(_deckx, -200, 0, a_block)
+	array_push(global.base_deck, _strike);
+	array_push(global.base_deck, _block);
 	
-	var draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
-	array_push(global.base_deck, draw);
+	var _draw = instance_create_depth(_deckx, -200, 0, a_draw_test)
+	array_push(global.base_deck, _draw);
 	
 	var pull = instance_create_depth(_deckx, -200, 0, a_pull_test)
 	array_push(global.base_deck, pull);
@@ -31,10 +32,10 @@ for (var i = 0; i < 5; i++) {
 	*/
 }
 
-// just copy the base deck to the in combat deck, and then shuffle it
-deck = array_create(array_length(global.base_deck));
-array_copy(deck, 0, global.base_deck, 0, array_length(global.base_deck));
-array_shuffle_ext(deck);
+// copy the base deck into the draw pile and then shuffle it
+draw = array_create(array_length(global.base_deck));
+array_copy(draw, 0, global.base_deck, 0, array_length(global.base_deck));
+array_shuffle_ext(draw);
 
 hand = [];
 discard = [];
@@ -43,7 +44,7 @@ exhaust = [];
 hand_needs_reposition = false
 hand_y = room_height;
 turn_start_draw = 5;
-// for now hand just draw 5 from deck and removes those from the deck
+// for now hand just draw 5 from draw and removes those from the draw
 
 base_energy = 3;
 combat_energy = base_energy
@@ -64,29 +65,25 @@ global.game_state = GAME_STATE.START_BATTLE;
 global.enemy_turn = 0;
 global.enemy_actions_remaining = 0;
 
-card_width = 256;
-card_offset = -64;
-card_height = 256;
-
 function draw_cards(num_cards) {
 	for (var i = 0; i < num_cards; i++) {
-		if (array_length(deck) <= 0 && array_length(discard) > 0) {
+		if (array_length(draw) <= 0 && array_length(discard) > 0) {
 			// Move all discarded cards into the empty draw pile, then shuffle it.
-			deck = discard
+			draw = discard
 			discard = []
-			array_shuffle_ext(deck);
+			array_shuffle_ext(draw);
 		}
 
-		if (array_length(deck) <= 0) {
+		if (array_length(draw) <= 0) {
 			// no cards remain in either pile
 			return
 		}
 		
 		// we can always determine where the y of the card is supposed to be
-		var next_card = array_pop(deck)
+		var next_card = array_pop(draw)
 		next_card.y = hand_y
 		next_card.card_original_y = hand_y
-		next_card.target_y = hand_y - card_height / 2
+		next_card.target_y = hand_y - global.card_height / 2
 		next_card.in_hand = true
 		array_push(hand, next_card);
 		hand_needs_reposition = true

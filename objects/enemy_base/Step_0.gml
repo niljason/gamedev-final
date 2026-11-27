@@ -12,7 +12,7 @@ if (state == ENEMY_STATE.DEAD) {
 
 var _hover = hover()
 
-if(_hover) {
+if(_hover && !global.input_locked) {
 	if(mouse_check_button_pressed(mb_left)) {
 		global.target_enemy = id
 	}
