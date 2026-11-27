@@ -20,8 +20,6 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_colour(c_white);
 draw_set_alpha(1);
-draw_text(viewer_margin, viewer_margin, pile_label + " PILE (" + string(array_length(_cards)) + ")");
-draw_text(viewer_margin, viewer_margin + header_line_height, "Scroll to browse. Click or press Esc to close.");
 
 for (var i = 0; i < array_length(_cards); i++) {
 	var _card = _cards[i];
@@ -39,6 +37,8 @@ for (var i = 0; i < array_length(_cards); i++) {
 
 	draw_card_at(_card, _x, _y);
 }
+
+draw_text(viewer_margin, viewer_margin, "Esc to close");
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
