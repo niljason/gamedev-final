@@ -77,7 +77,17 @@ function attack(damage) {
 	}
 	
 	if(_target != undefined) {
-		_target.hp -= damage
+		var _enemy_block = _target.status_effects.block
+		if(_enemy_block > 0) {
+			var _remaining_damage = max(0, damage - _enemy_block)
+			_target.status_effects.block = max(0, _enemy_block - damage)
+			_target.hp -= _remaining_damage
+		}
+		else {
+			_target.hp -= damage
+		}
+		
+		
 		if (_target.hp <= 0) {
 			_target.state = ENEMY_STATE.DEAD
 		}
