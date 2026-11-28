@@ -29,6 +29,10 @@ else if (global.game_state == GAME_STATE.START_TURN) {
 	if(_ritual > 0) {
 		obj_player.status_effects.ritual = 10 + floor(_ritual * 0.75)
 	}
+	
+	with(enemy_base) {
+		status_effects.block = 0
+	}
 	global.game_state = GAME_STATE.ENEMY_TURN;
 }
 
