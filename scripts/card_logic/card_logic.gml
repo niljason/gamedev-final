@@ -12,7 +12,7 @@ function play_card(_effects) {
 				attack(atk_val)
 				break
 			case "block":
-				gain_armor(armor_val)
+				gain_block(block_val)
 				break
 			case "draw":
 				draw_from_deck(draw_val)
@@ -77,15 +77,25 @@ function attack(damage) {
 	}
 	
 	if(_target != undefined) {
-		_target.hp -= damage
+		var _enemy_block = _target.status_effects.block
+		if(_enemy_block > 0) {
+			var _remaining_damage = max(0, damage - _enemy_block)
+			_target.status_effects.block = max(0, _enemy_block - damage)
+			_target.hp -= _remaining_damage
+		}
+		else {
+			_target.hp -= damage
+		}
+		
+		
 		if (_target.hp <= 0) {
 			_target.state = ENEMY_STATE.DEAD
 		}
 	}	
 }
 
-function gain_armor(armor) {
-	obj_player.armor += armor
+function gain_block(_val) {
+	obj_player.block += _val
 }
 
 function draw_from_deck(num_cards) {
