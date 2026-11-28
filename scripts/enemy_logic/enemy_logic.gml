@@ -74,8 +74,21 @@ function enemy_turn(_move, _actions) {
 
 		switch (_action) {
 			case "attack":
+				var weakness_mult = 0.8
 				var _damage = _value + status_effects.strength;
 				var _blocked = min(obj_player.block, _damage);
+				
+				var _siphon_stacks = status_effects.siphon
+				if(_siphon_stacks>0) {
+					_damage = max(0, _damage - _siphon_stacks)
+					status_effects.siphon = max(0, status_effects.siphon-1)
+				}
+	
+				if(status_effects.weak > 0) {
+					_damage = floor(_damage * weakness_mult)
+				}
+				
+				
 				obj_player.block -= _blocked;
 				obj_player.hp -= _damage - _blocked;
 				break;

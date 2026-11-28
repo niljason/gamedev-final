@@ -68,8 +68,8 @@ function attack(damage) {
 	// siphon is applied before weak 
 	var _siphon_stacks = _status.siphon
 	if(_siphon_stacks>0) {
-		damage -= _siphon_stacks
-		_status.siphon--
+		damage = max(0, damage - _siphon_stacks)
+		_status.siphon = max(0, _siphon_stacks-1)
 	}
 	
 	if(_status.weak > 0) {

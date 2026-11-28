@@ -19,6 +19,7 @@
     {"name":"a_draw_test","order":1,"path":"objects/a_draw_test/a_draw_test.yy",},
     {"name":"a_pull_test","order":4,"path":"objects/a_pull_test/a_pull_test.yy",},
     {"name":"a_push_test","order":3,"path":"objects/a_push_test/a_push_test.yy",},
+    {"name":"a_siphon_test","order":5,"path":"objects/a_siphon_test/a_siphon_test.yy",},
     {"name":"a_strength_test","order":1,"path":"objects/a_strength_test/a_strength_test.yy",},
     {"name":"a_weak_test","order":2,"path":"objects/a_weak_test/a_weak_test.yy",},
     {"name":"base_card_attack","order":1,"path":"objects/base_card_attack/base_card_attack.yy",},

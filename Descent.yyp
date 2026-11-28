@@ -43,6 +43,7 @@
     {"id":{"name":"a_pull_test","path":"objects/a_pull_test/a_pull_test.yy",},},
     {"id":{"name":"a_push_test","path":"objects/a_push_test/a_push_test.yy",},},
     {"id":{"name":"a_ritual_test","path":"objects/a_ritual_test/a_ritual_test.yy",},},
+    {"id":{"name":"a_siphon_test","path":"objects/a_siphon_test/a_siphon_test.yy",},},
     {"id":{"name":"a_strength_test","path":"objects/a_strength_test/a_strength_test.yy",},},
     {"id":{"name":"a_strike","path":"objects/a_strike/a_strike.yy",},},
     {"id":{"name":"a_weak_test","path":"objects/a_weak_test/a_weak_test.yy",},},
